@@ -37,7 +37,7 @@ Since 2017
 
 ## Publications
 
-### Peer-reviewed Papers
+### Peer-reviewed papers
 
 2020
 :   **Pooch: A friend to fetch your data files**,
