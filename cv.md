@@ -167,7 +167,7 @@ Since 2015
 ## Teaching
 
 2017 - 2019
-:   **Physics I and Statistical Mechanics**
+:   **Physics I** and **Statistical Mechanics**
     _Departamento de Geofísica y Astronomía,
     Facultad de Ciencias Exactas, Físicas y Naturales,
     Universidad Nacional de San Juan_
@@ -205,6 +205,7 @@ Programming
 Tools
 :   GNU/Linux, git, Inkscape, GIMP, LibreOffice suite, Neovim, GNU make, GMT,
     maxima.
+
 
 ## Awards and Scholarships
 
