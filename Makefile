@@ -1,33 +1,38 @@
 PROJECT=cv
 PROJECT_ES=cv_es
 CSS_STYLE=style/style.css
-PANDOC=pandoc
 PANDOC_ARGS=--standalone --from markdown --to html --css $(CSS_STYLE)
+WKHTMLTOPDF_ARGS=-L 25mm -R 25mm -T 25mm -B 25mm --default-header
 HTML=index.html
+HTML_ES=index_es.html
 OUTDIR=_output
 PDF_READER="xdg-open"
 
 
 all: pdf
 
-pdf: $(PROJECT).md $(CSS_STYLE) | $(OUTDIR)
-	$(PANDOC) $(PANDOC_ARGS) -o $(OUTDIR)/$(PROJECT).pdf $<
+html: $(PROJECT).md $(CSS_STYLE) | $(OUTDIR)
+	cp -rf style $(OUTDIR)
+	pandoc $(PANDOC_ARGS) -o $(OUTDIR)/$(HTML) $<
+
+pdf: html
+	wkhtmltopdf $(WKHTMLTOPDF_ARGS) $(OUTDIR)/$(HTML) $(OUTDIR)/$(PROJECT).pdf
 
 show: pdf
 	$(PDF_READER) $(OUTDIR)/$(PROJECT).pdf 2> /dev/null
 
-pdf_es: $(PROJECT_ES).md $(CSS_STYLE) | $(OUTDIR)
-	$(PANDOC) $(PANDOC_ARGS) -o $(OUTDIR)/$(PROJECT_ES).pdf $<
+serve: html
+	cd $(OUTDIR) && python -m http.server 8002
+
+html_es: $(PROJECT_ES).md $(CSS_STYLE) | $(OUTDIR)
+	cp -rf style $(OUTDIR)
+	pandoc $(PANDOC_ARGS) -o $(OUTDIR)/$(HTML_ES) $<
+
+pdf_es: html_es
+	wkhtmltopdf $(WKHTMLTOPDF_ARGS) $(OUTDIR)/$(HTML_ES) $(OUTDIR)/$(PROJECT_ES).pdf
 
 show_es: pdf_es
 	$(PDF_READER) $(OUTDIR)/$(PROJECT_ES).pdf 2> /dev/null
-
-html: $(PROJECT).md $(CSS_STYLE) | $(OUTDIR)
-	cp -rf style $(OUTDIR)
-	$(PANDOC) $(PANDOC_ARGS) -o $(OUTDIR)/$(HTML) $<
-
-serve: html
-	cd $(OUTDIR) && python -m http.server 8002
 
 clean:
 	rm -rf $(OUTDIR)

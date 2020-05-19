@@ -1,9 +1,5 @@
 ---
 title: Santiago Soler
-margin-left: 25mm
-margin-right: 25mm
-margin-top: 30mm
-margin-bottom: 30mm
 ---
 
 ----
