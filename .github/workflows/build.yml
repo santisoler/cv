@@ -1,0 +1,28 @@
+name: Build CV
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+
+
+jobs:
+
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run: sudo apt install make pandoc wkhtmltopdf
+
+    - name: Build CV (PDF)
+      run: |
+        make pdf
+        make pdf_es
+
+    - name: Build CV (HTML)
+      run: |
+        make html
