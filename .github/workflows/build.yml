@@ -20,8 +20,8 @@ jobs:
 
     - name: Build CV (PDF)
       run: |
-        make pdf
-        make pdf_es
+        xvfb-run -- make pdf
+        xvfb-run -- make pdf_es
 
     - name: Build CV (HTML)
       run: |
