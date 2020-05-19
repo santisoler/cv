@@ -1,0 +1,39 @@
+name: Deploy CV
+
+on:
+  push:
+    branches: [ master ]
+
+
+jobs:
+
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+    # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+    - uses: actions/checkout@v2
+
+    - name: Install dependencies
+      run: sudo apt install make pandoc wkhtmltopdf
+
+    - name: Build CV (PDF)
+      run: |
+        xvfb-run -- make pdf
+        xvfb-run -- make pdf_es
+
+    - name: Deploy CV
+      run: |
+        mkdir ~/tmp
+        cp -r _output/* ~/tmp/
+        git checkout pdf
+        rm -rf *
+        cp -rf ~/tmp/* .
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git commit -m "Update CV" -a
+    - name: Push changes
+      uses: ad-m/github-push-action@master
+      with:
+        github_token: ${{ secrets.GITHUB_TOKEN }}
+        branch: "pdf"
+        force: True
