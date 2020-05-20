@@ -24,6 +24,7 @@ show_es: pdf_es
 
 html: $(PROJECT).md $(CSS_STYLE) | $(OUTDIR)
 	cp -rf style $(OUTDIR)
+	touch $(OUTDIR)/.nojekyll
 	$(PANDOC) $(PANDOC_ARGS) -o $(OUTDIR)/$(HTML) $<
 
 serve: html
