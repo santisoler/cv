@@ -2,8 +2,10 @@
 
 Sources for building my academic CV.
 
-A PDF version of my CV can be found
-[here](https://santisoler.github.io/cv/cv.pdf).
+Pdf versions of my CV are available in
+[English](https://santisoler.github.io/cv/cv.pdf)
+and
+[Spanish](https://santisoler.github.io/cv/cv_es.pdf)
 
 A html version of the CV can be found at https://santisoler.github.io/cv
 
