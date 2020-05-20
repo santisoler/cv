@@ -162,7 +162,6 @@ Desde 2017
 
 2017
 :   **Tesseroides con densidad variable: modelo directo con software libre**,
-
     _I Congreso Binacional de Investigación Científica y V Encuentro de
     Jóvenes Investigadores, San Juan_
 
