@@ -30,7 +30,7 @@ Since 2017
     _Advisor_: Mario Gimenez<br/>
     _Co-advisor_: [Leonardo Uieda](https://www.leouieda.com)
 
-2009-2015
+2009 - 2015
 :   **Licentiate in Physics**
     _FCEIA, Universidad Nacional de Rosario_
 

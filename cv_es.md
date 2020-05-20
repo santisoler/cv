@@ -30,7 +30,7 @@ Desde 2017
     _Director_: Mario Gimenez<br/>
     _Codirector_: [Leonardo Uieda](https://www.leouieda.com)
 
-2009-2015
+2009 - 2015
 :   **Licenciatura en Física**
     _FCEIA, Universidad Nacional de Rosario_
 
