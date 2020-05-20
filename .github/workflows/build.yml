@@ -18,8 +18,8 @@ jobs:
 
     - name: Build CV (PDF)
       run: |
-        xvfb-run -- make pdf
-        xvfb-run -- make pdf_es
+        xvfb-run --auto-servernum make pdf
+        xvfb-run --auto-servernum make pdf_es
 
     - name: Build CV (HTML)
       run: |

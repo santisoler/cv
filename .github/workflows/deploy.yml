@@ -18,9 +18,9 @@ jobs:
 
     - name: Build CV (pdf and html)
       run: |
-        xvfb-run -- make pdf
-        xvfb-run -- make pdf_es
-        xvfb-run -- make html
+        xvfb-run --auto-servernum make pdf
+        xvfb-run --auto-servernum make pdf_es
+        xvfb-run --auto-servernum make html
 
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@releases/v3
