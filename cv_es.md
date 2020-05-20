@@ -35,6 +35,52 @@ Desde 2017
     _FCEIA, Universidad Nacional de Rosario_
 
 
+## Premios y becas
+
+2017-2022
+:   Beca Interna Doctoral de CONICET
+
+2016
+:   Premio Fundación Josefina Prats - Licenciatura en Física
+
+2012
+:   Beneficiario de Beca Universitaria Externa 2012 para alumnos de UNL y UNR
+    de la Fundación del Banco de Santa Fe.
+
+2012
+:    Premio Nacional Santander Río al Mérito Académico
+
+2012
+:   Premio Josefina Prats - IFIR
+
+
+## Docencia
+
+2017 - 2019
+:   **Física** y  **Mecánica Estadística**
+    _Departamento de Geofísica y Astronomía,
+    Facultad de Ciencias Exactas, Físicas y Naturales,
+    Universidad Nacional de San Juan_
+
+    Jefe de Trabajos Prácticos
+
+2017
+:   **Taller Introductorio a LaTeX: Cómo producir documentos de calidad**,
+    _Secretaría de Extensión,
+    Facultad de Ciencias Exactas, Físicas y Naturales,
+    Universidad Nacional de San Juan_
+
+    Santiago Soler y Agustina Pesce
+
+2013 - 2015
+:   **Introducción a la Ciencia** and **Física I**,
+    _Departamento de Física, Escuela de Ciencias Exactas y Naturales,
+    Facultad de Ciencias Exactas, Ingeniería y Agrimensura,
+    Universidad Nacional de Rosario_
+
+    Ayudante de Segunda
+
+
 ## Publicaciones
 
 ### Artículos revisado por pares
@@ -164,33 +210,6 @@ Desde 2015
     [https://www.fatiando.org/](https://www.fatiando.org/)
 
 
-## Docencia
-
-2017 - 2019
-:   **Física** y  **Mecánica Estadística**
-    _Departamento de Geofísica y Astronomía,
-    Facultad de Ciencias Exactas, Físicas y Naturales,
-    Universidad Nacional de San Juan_
-
-    Jefe de Trabajos Prácticos
-
-2017
-:   **Taller Introductorio a LaTeX: Cómo producir documentos de calidad**,
-    _Secretaría de Extensión,
-    Facultad de Ciencias Exactas, Físicas y Naturales,
-    Universidad Nacional de San Juan_
-
-    Santiago Soler y Agustina Pesce
-
-2013 - 2015
-:   **Introducción a la Ciencia** and **Física I**,
-    _Departamento de Física, Escuela de Ciencias Exactas y Naturales,
-    Facultad de Ciencias Exactas, Ingeniería y Agrimensura,
-    Universidad Nacional de Rosario_
-
-    Ayudante de Segunda
-
-
 ## Revisor
 
 Desde 2018
@@ -205,25 +224,6 @@ Programación
 Herramientas
 :   GNU/Linux, git, Inkscape, GIMP, LibreOffice suite, Neovim, GNU make, GMT,
     maxima.
-
-
-## Premios y becas
-
-2017-2022
-:   Beca Interna Doctoral de CONICET
-
-2016
-:   Premio Fundación Josefina Prats - Licenciatura en Física
-
-2012
-:   Beneficiario de Beca Universitaria Externa 2012 para alumnos de UNL y UNR
-    de la Fundación del Banco de Santa Fe.
-
-2012
-:    Premio Nacional Santander Río al Mérito Académico
-
-2012
-:   Premio Josefina Prats - IFIR
 
 
 ## Idiomas

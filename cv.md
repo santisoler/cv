@@ -35,6 +35,51 @@ Since 2017
     _FCEIA, Universidad Nacional de Rosario_
 
 
+## Awards and Scholarships
+
+2017-2022
+:   CONICET PhD Scholarship
+
+2016
+:   Fundación Josefina Prats Award - Licenciatura en Física
+
+2012
+:   University Scholarship granted by Fundación del Banco de Santa Fe
+
+2012
+:   Santander Río National Award to Academic Merit 2012
+
+2012
+:   Josefina Prats Award - IFIR 2012
+
+
+## Teaching
+
+2017 - 2019
+:   **Physics I** and **Statistical Mechanics**
+    _Departamento de Geofísica y Astronomía,
+    Facultad de Ciencias Exactas, Físicas y Naturales,
+    Universidad Nacional de San Juan_
+
+    Jefe de Trabajos Prácticos (assistant professor of practice)
+
+2017
+:   **Introductory course to LaTeX: How to produce high quality documents**,
+    _Secretaría de Extensión,
+    Facultad de Ciencias Exactas, Físicas y Naturales,
+    Universidad Nacional de San Juan_
+
+    Santiago Soler and Agustina Pesce
+
+2013 - 2015
+:   **Introduction to Science** and **Physics I**,
+    _Departamento de Física, Escuela de Ciencias Exactas y Naturales,
+    Facultad de Ciencias Exactas, Ingeniería y Agrimensura,
+    Universidad Nacional de Rosario_
+
+    Ayudante de Segunda (undergraduate assistant teacher)
+
+
 ## Publications
 
 ### Peer-reviewed papers
@@ -164,33 +209,6 @@ Since 2015
     [https://www.fatiando.org/](https://www.fatiando.org/)
 
 
-## Teaching
-
-2017 - 2019
-:   **Physics I** and **Statistical Mechanics**
-    _Departamento de Geofísica y Astronomía,
-    Facultad de Ciencias Exactas, Físicas y Naturales,
-    Universidad Nacional de San Juan_
-
-    Jefe de Trabajos Prácticos (assistant professor of practice)
-
-2017
-:   **Introductory course to LaTeX: How to produce high quality documents**,
-    _Secretaría de Extensión,
-    Facultad de Ciencias Exactas, Físicas y Naturales,
-    Universidad Nacional de San Juan_
-
-    Santiago Soler and Agustina Pesce
-
-2013 - 2015
-:   **Introduction to Science** and **Physics I**,
-    _Departamento de Física, Escuela de Ciencias Exactas y Naturales,
-    Facultad de Ciencias Exactas, Ingeniería y Agrimensura,
-    Universidad Nacional de Rosario_
-
-    Ayudante de Segunda (undergraduate assistant teacher)
-
-
 ## Reviewer
 
 Since 2018
@@ -205,24 +223,6 @@ Programming
 Tools
 :   GNU/Linux, git, Inkscape, GIMP, LibreOffice suite, Neovim, GNU make, GMT,
     maxima.
-
-
-## Awards and Scholarships
-
-2017-2022
-:   CONICET PhD Scholarship
-
-2016
-:   Fundación Josefina Prats Award - Licenciatura en Física
-
-2012
-:   University Scholarship granted by Fundación del Banco de Santa Fe
-
-2012
-:   Santander Río National Award to Academic Merit 2012
-
-2012
-:   Josefina Prats Award - IFIR 2012
 
 
 ## Languages
