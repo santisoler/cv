@@ -30,7 +30,7 @@ Desde 2017
     _Director_: Mario Gimenez<br/>
     _Codirector_: [Leonardo Uieda](https://www.leouieda.com)
 
-2009-2015
+2009 - 2015
 :   **Licenciatura en Física**
     _FCEIA, Universidad Nacional de Rosario_
 
@@ -162,7 +162,6 @@ Desde 2017
 
 2017
 :   **Tesseroides con densidad variable: modelo directo con software libre**,
-
     _I Congreso Binacional de Investigación Científica y V Encuentro de
     Jóvenes Investigadores, San Juan_
 
