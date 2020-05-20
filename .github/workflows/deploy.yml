@@ -16,14 +16,15 @@ jobs:
     - name: Install dependencies
       run: sudo apt install make pandoc wkhtmltopdf
 
-    - name: Build CV (PDF)
+    - name: Build CV (pdf and html)
       run: |
         xvfb-run -- make pdf
         xvfb-run -- make pdf_es
+        xvfb-run -- make html
 
     - name: Deploy 🚀
       uses: JamesIves/github-pages-deploy-action@releases/v3
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        BRANCH: pdf
-        FOLDER: _output
+        BRANCH: gh-pages
+        FOLDER: _build

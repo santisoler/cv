@@ -4,7 +4,7 @@ CSS_STYLE=style/style.css
 PANDOC=pandoc
 PANDOC_ARGS=--standalone --from markdown --to html5 --css $(CSS_STYLE)
 HTML=index.html
-OUTDIR=_output
+OUTDIR=_build
 PDF_READER="xdg-open"
 
 
