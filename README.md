@@ -3,7 +3,9 @@
 Sources for building my academic CV.
 
 A PDF version of my CV can be found
-[here](https://github.com/santisoler/cv/raw/pdf/cv.pdf).
+[here](https://santisoler.github.io/cv/cv.pdf).
+
+A html version of the CV can be found at https://santisoler.github.io/cv
 
 
 ## About
@@ -16,7 +18,8 @@ It basically uses `pandoc` for creating a html version of the CV with a
 and then `wkhtmltopdf` to create a PDF.
 
 The whole process is automated through GitHub Actions, so after any new commit
-on `master`, the CV is automatically built and uploaded to the `pdf` branch.
+on `master`, both pdf and html versions of the CV are automatically built and
+uploaded to the `gh-pages` branch.
 
 I got inspiration and knowledge for creating this workflow from:
 
@@ -57,8 +60,8 @@ Then I stumbled upon
 that shows how to create a good looking CV with Markdown and just a single CSS file
 through `pandoc`. This is very **simple**, although again, no PDF...
 
-And finally I found [this blog
-entry](https://tuxtor.shekalug.org/creando-un-curriculum-con-markdown-pandoc-y-wkhtmltopdf/)
+And finally I found
+[this blog entry](https://tuxtor.shekalug.org/creando-un-curriculum-con-markdown-pandoc-y-wkhtmltopdf/)
 that shows how to use `wkhtmltopdf` to convert the html version of the CV to
 a PDF. Awesome, this is what I want!
 
@@ -71,8 +74,7 @@ For example:
 pandoc --standalone --css style.css --from markdown --to html5 -o cv.pdf cv.md
 ```
 
-Moreover, I can still generate a html version of my CV in case I want to
-publish it as a website.
+Moreover, I can still generate a html version of my CV.
 
 
 ## How to use `wkhtmltopdf` on headless systems?
@@ -111,3 +113,5 @@ For creating the html version:
 ```
 make html
 ```
+
+Use `make serve` to actually see the html version through http://localhost:8002
