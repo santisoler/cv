@@ -1,8 +1,10 @@
 PROJECT=cv
 PROJECT_ES=cv_es
 CSS_STYLE=style/style.css
+HTML_TEMPLATE=style/template.html
+CURRENT_DATE="$(shell LANG="en_EN" && date "+%B %Y")"
 PANDOC=pandoc
-PANDOC_ARGS=--standalone --from markdown --to html5 --css $(CSS_STYLE)
+PANDOC_ARGS=--standalone --from markdown --to html5 --css $(CSS_STYLE) --metadata date=$(CURRENT_DATE) --template $(HTML_TEMPLATE)
 HTML=index.html
 OUTDIR=_build
 PDF_READER="xdg-open"
