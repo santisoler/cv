@@ -1,4 +1,10 @@
 /*
+ * Copyright 2020 Santiago Soler <santiago.r.soler@gmail.com>
+ *
+ * Content under CC BY-SA 4.0 License
+ *
+ * Forked from:
+ *
  * Copyright 2013 Christophe-Marie Duquesne <chmd@chmd.fr>
  *
  * CSS for making a resume with pandoc. Inspired by moderncv.
@@ -92,4 +98,8 @@ a:hover, a:active {
 /* Horizontal separators */
 hr {
     color: #A6A6A6;
+}
+
+.footer {
+    color: #aeaeae;
 }
