@@ -143,6 +143,15 @@ Desde 2017
 
     doi: [10.5194/egusphere-egu2020-549](https://doi.org/10.5194/egusphere-egu2020-549)
 
+2020
+:   **Evaluating the accuracy of equivalent-source predictions using
+    cross-validation**
+    _EGU2020 General Assembly_
+
+    Leonardo Uieda and Santiago Soler
+
+    doi: [10.5194/egusphere-egu2020-15729](https://doi.org/10.5194/egusphere-egu2020-15729)
+
 2019
 :   **Experiencias en el desarrollo de Fatiando a Terra**
     _Taller Argentino de Computación Científica_
