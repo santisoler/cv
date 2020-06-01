@@ -157,7 +157,7 @@ Since 2017
 
     Santiago Soler
 
-    doi: [10.6084/m9.figshare.10013006](https://doi.org/ 10.6084/m9.figshare.10013006)
+    doi: [10.6084/m9.figshare.10013006](https://doi.org/10.6084/m9.figshare.10013006)
 
 2019
 :   **Gravitational fields of tesseroids with variable density**
