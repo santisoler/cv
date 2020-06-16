@@ -60,6 +60,13 @@ Since 2017
 
 ## Teaching
 
+2020
+:   **Tutorial: From scattered data to gridded products using Verde**
+    _Transform 2020, Software Underground_
+
+    Assistant Instructor
+
+
 2017 - 2019
 :   **Physics I** and **Statistical Mechanics**
     _Departamento de Geofísica y Astronomía,
