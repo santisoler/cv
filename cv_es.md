@@ -24,8 +24,8 @@ Desde 2017
 :   **Estudiante del Doctorado en Geofísica**
     _FCFyN, Universidad Nacional de San Juan_
 
-    _Thesis_: Joint seismological and gravity inversion models in spherical
-    coordinates through Tesseroids
+    _Tésis_: Modelos de Inversión Conjunta de Datos Sismológicos
+    y Gravimétricos en Coordenadas Esféricas empleando Tesseroides
 
     _Director_: Mario Gimenez<br/>
     _Codirector_: [Leonardo Uieda](https://www.leouieda.com)
@@ -34,6 +34,8 @@ Desde 2017
 :   **Licenciatura en Física**
     _FCEIA, Universidad Nacional de Rosario_
 
+    _Tésis_: Métodos Espectrales para la Determinación de la Profundidad del
+    Punto de Curie y el Espesor Elástico de la Corteza Terrestre
 
 ## Premios y becas
 

@@ -34,6 +34,11 @@ Since 2017
 :   **Licentiate in Physics**
     _FCEIA, Universidad Nacional de Rosario_
 
+    _Thesis_: Spectral methods for the determination of the Curie Depth Point
+    and Elastic Thickness of Earth's Crust
+
+    _Advisor_: Mario Gimenez
+
 
 ## Awards and Scholarships
 
