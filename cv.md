@@ -234,8 +234,8 @@ Programming
 :   Python, bash, FORTRAN, C, LaTeX, Markdown
 
 Tools
-:   GNU/Linux, git, Inkscape, GIMP, LibreOffice suite, Neovim, GNU make, GMT,
-    maxima.
+:   GNU/Linux, git, JupyterLab, Neovim, Inkscape, GIMP, office suite, GMT,
+    maxima, bash tools.
 
 
 ## Languages
