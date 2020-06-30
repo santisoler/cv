@@ -150,6 +150,12 @@ Desde 2017
 ### Artículos publicados en reuniones científicas
 
 2020
+:   **How to grid gravmag data with Harmonica**
+    _Transform2020, Software Underground_
+
+    Lightning talk
+
+2020
 :   **A better strategy for interpolating gravity and magnetic data**
     _EGU2020 General Assembly_
 
