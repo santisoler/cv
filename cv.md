@@ -61,6 +61,12 @@ Since 2017
 ## Teaching
 
 2020
+:   **Introducción a Python para Científicxs**
+    _Universidad Nacional de San Juan_
+
+    Instructor
+
+2020
 :   **Tutorial: From scattered data to gridded products using Verde**
     _Transform 2020, Software Underground_
 
