@@ -252,6 +252,9 @@ Since 2018
 Programming
 :   Python, bash, FORTRAN, C, LaTeX, Markdown
 
+Markup
+:   Markdown, LaTeX, HTML, CSS
+
 Tools
 :   GNU/Linux, git, JupyterLab, Neovim, Inkscape, GIMP, office suite, GMT,
     maxima, bash tools.

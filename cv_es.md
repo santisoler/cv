@@ -247,7 +247,10 @@ Desde 2018
 ## Conocimientos técnicos
 
 Programación
-:   Python, bash, FORTRAN, C, LaTeX, Markdown
+:   Python, bash, FORTRAN, C
+
+Markup
+:   Markdown, LaTeX, HTML, CSS
 
 Herramientas
 :   GNU/Linux, git, JupyterLab, Neovim, Inkscape, GIMP, office suite, GMT,
