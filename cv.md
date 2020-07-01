@@ -250,7 +250,7 @@ Since 2018
 ## Technical Skills
 
 Programming
-:   Python, bash, FORTRAN, C, LaTeX, Markdown
+:   Python, bash, FORTRAN, C
 
 Markup
 :   Markdown, LaTeX, HTML, CSS
