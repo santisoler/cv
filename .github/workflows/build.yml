@@ -1,17 +1,18 @@
-name: Build CV
+name: build-cv
 
 on:
   pull_request:
-    branches: [ master ]
-
+  push:
+    banches:
+      - master
 
 jobs:
-
   build:
     runs-on: ubuntu-latest
     steps:
     # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
-    - uses: actions/checkout@v2
+    - name: Checkout
+      uses: actions/checkout@v2
 
     - name: Install dependencies
       run: sudo apt install make pandoc wkhtmltopdf
@@ -24,3 +25,11 @@ jobs:
     - name: Build CV (HTML)
       run: |
         make html
+
+    - name: Deploy 🚀
+      if: success() && github.event_name == 'push'
+      uses: JamesIves/github-pages-deploy-action@releases/v3
+      with:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        BRANCH: gh-pages
+        FOLDER: _build
