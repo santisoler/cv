@@ -28,7 +28,8 @@ jobs:
 
     - name: Deploy 🚀
       if: success() && github.event_name == 'push'
-      uses: JamesIves/github-pages-deploy-action@releases/v3
+      # Don't use tags: https://julienrenaux.fr/2019/12/20/github-actions-security-risk/
+      uses: JamesIves/github-pages-deploy-action@54066045208a389f6e16e9030494962f8afb4dfc
       with:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         BRANCH: gh-pages
