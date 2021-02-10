@@ -45,6 +45,9 @@ Since 2017
 2017-2022
 :   CONICET PhD Scholarship
 
+2019
+:   Early Career Scientist's Travel Support for EGU2020 General Assembly
+
 2016
 :   Fundación Josefina Prats Award - Licenciatura en Física
 

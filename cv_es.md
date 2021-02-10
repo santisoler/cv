@@ -42,6 +42,9 @@ Desde 2017
 2017-2022
 :   Beca Interna Doctoral de CONICET
 
+2019
+:   Early Career Scientist's Travel Support for EGU2020 General Assembly
+
 2016
 :   Premio Fundación Josefina Prats - Licenciatura en Física
 
