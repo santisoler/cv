@@ -13,6 +13,9 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout
         uses: actions/checkout@v2
+        
+      - name: Update repos
+        run: sudo apt update
 
       - name: Install dependencies
         run: sudo apt install make pandoc wkhtmltopdf
