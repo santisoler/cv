@@ -61,6 +61,11 @@ Desde 2017
 
 ## Docencia
 
+2021
+:
+    **Instructor certificado de The Carpentries**
+    _The Carpentries_
+
 2020
 :   **Introducción a Python para Científicxs**
     _Universidad Nacional de San Juan_
