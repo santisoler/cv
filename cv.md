@@ -113,7 +113,7 @@ Since 2017
 :   **Gradient-boosted equivalent sources**,
     _Geophysical Journal International_
 
-    Santiago Rubén Soler y Leonardo Uieda
+    Santiago Rubén Soler and Leonardo Uieda
 
     doi: [doi.org/10.1093/gji/ggab297](https://doi.org/doi.org/10.1093/gji/ggab297)
 
