@@ -109,6 +109,14 @@ Since 2017
 
 ### Peer-reviewed papers
 
+2021
+:   **Gradient-boosted equivalent sources**,
+    _Geophysical Journal International_
+
+    Santiago Rubén Soler y Leonardo Uieda
+
+    doi: [doi.org/10.1093/gji/ggab297](https://doi.org/doi.org/10.1093/gji/ggab297)
+
 2020
 :   **Pooch: A friend to fetch your data files**,
     _Journal of Open-Source Software_
