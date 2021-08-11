@@ -105,7 +105,28 @@ Desde 2017
 
 ## Publicaciones
 
-### Artículos revisado por pares
+### Artículos revisados por pares
+
+2021
+:   **Fatiando a Terra: Open-source tools for geophysics**
+    _Geophysical Society of Houston_
+
+    Leonardo Uieda, Santiago R. Soler y Agustina Pesce
+
+2021
+:   **Gradient-boosted equivalent sources for gridding large gravity and
+    magnetic datasets**
+    _EGU21 General Assembly_
+
+    Santiago R. Soler y Leonardo Uieda
+
+    doi: [10.5194/egusphere-egu21-1276](https://doi.org/10.5194/egusphere-egu21-1276)
+
+2021
+:   **Tutorial: Processing gravity and magnetic data with Harmonica**
+    _Transform21, Software Underground_
+
+    Santiago R. Soler, Andrea Balza Morales y Agustina Pesce
 
 2021
 :   **Gradient-boosted equivalent sources**,
@@ -163,7 +184,7 @@ Desde 2017
     doi: [10.1016/j.jsames.2017.11.021](https://doi.org/10.1016/j.jsames.2017.11.021)
 
 
-### Artículos publicados en reuniones científicas
+### Artículos en reuniones científicas
 
 2020
 :   **How to grid gravmag data with Harmonica**
