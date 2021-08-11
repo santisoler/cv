@@ -95,7 +95,7 @@ Desde 2017
     Santiago Soler y Agustina Pesce
 
 2013 - 2015
-:   **Introducción a la Ciencia** and **Física I**,
+:   **Introducción a la Ciencia** y **Física I**,
     _Departamento de Física, Escuela de Ciencias Exactas y Naturales,
     Facultad de Ciencias Exactas, Ingeniería y Agrimensura,
     Universidad Nacional de Rosario_
@@ -141,7 +141,7 @@ Desde 2017
     _Journal of Open-Source Software_
 
     Leonardo Uieda, Santiago Rubén Soler, Rémi Rampin, Hugo vanKemenade,
-    Matthew Turk, Daniel Shapero, Anderson Banihirwe and John Leeman
+    Matthew Turk, Daniel Shapero, Anderson Banihirwe y John Leeman
 
     doi: [10.21105/joss.01943](https://doi.org/10.21105/joss.01943)
 
@@ -150,7 +150,7 @@ Desde 2017
     densities in depth**,
     _Geophysical Journal International_
 
-    Santiago R Soler, Agustina Pesce, Mario E Gimenez, Leonardo Uieda
+    Santiago R Soler, Agustina Pesce, Mario E Gimenez y Leonardo Uieda
 
     doi: [10.1093/gji/ggz277](https://doi.org/10.1093/gji/ggz277)
 
@@ -159,7 +159,7 @@ Desde 2017
     Insights from Paleogene tectonics of the Patagonian Andes**,
     _Journal of Geodynamics_
 
-    Guido M. Gianni, Agustina Pesce, Santiago R. Soler
+    Guido M. Gianni, Agustina Pesce y Santiago R. Soler
 
     doi: [10.1016/j.jog.2018.07.008](https://doi.org/10.1016/j.jog.2018.07.008)
 
@@ -169,7 +169,7 @@ Desde 2017
     _Pure and Applied Geophysics_
 
     Orlando Álvarez, Agustina Pesce, Mario Gimenez, Andres Folguera, Santiago
-    Soler and Wenjin Chen
+    Soler y Wenjin Chen
 
     doi: [10.1007/s00024-016-1376-y](https://doi.org/10.1007/s00024-016-1376-y)
 
@@ -196,7 +196,7 @@ Desde 2017
 :   **A better strategy for interpolating gravity and magnetic data**
     _EGU2020 General Assembly_
 
-    Santiago Soler and Leonardo Uieda
+    Santiago Soler y Leonardo Uieda
 
     doi: [10.5194/egusphere-egu2020-549](https://doi.org/10.5194/egusphere-egu2020-549)
 
@@ -205,7 +205,7 @@ Desde 2017
     cross-validation**
     _EGU2020 General Assembly_
 
-    Leonardo Uieda and Santiago Soler
+    Leonardo Uieda y Santiago Soler
 
     doi: [10.5194/egusphere-egu2020-15729](https://doi.org/10.5194/egusphere-egu2020-15729)
 
