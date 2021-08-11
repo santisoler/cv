@@ -256,7 +256,9 @@ Desde 2015
 
 ## Revisor
 
-Desde 2018
+Revistas científicas
+:   [**Journal of Open Research Software**](https://openresearchsoftware.metajnl.com/)
+:   [**Journal of Applied Geophysics**](https://www.sciencedirect.com/journal/journal-of-applied-geophysics)
 :   [**Journal of Open-Source Software**](https://joss.theoj.org/)
 
 

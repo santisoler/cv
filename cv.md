@@ -258,7 +258,9 @@ Since 2015
 
 ## Reviewer
 
-Since 2018
+Journals
+:   [**Journal of Open Research Software**](https://openresearchsoftware.metajnl.com/)
+:   [**Journal of Applied Geophysics**](https://www.sciencedirect.com/journal/journal-of-applied-geophysics)
 :   [**Journal of Open-Source Software**](https://joss.theoj.org/)
 
 
