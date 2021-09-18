@@ -1,39 +1,79 @@
-name: build-cv
+name: build_cv
 
 on:
   pull_request:
   push:
-    banches:
+    branches:
       - master
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - name: Checkout
         uses: actions/checkout@v2
-        
-      - name: Update repos
-        run: sudo apt update
-
-      - name: Install dependencies
-        run: sudo apt install make pandoc wkhtmltopdf
-
-      - name: Build CV (PDF)
-        run: |
-          xvfb-run --auto-servernum make pdf
-          xvfb-run --auto-servernum make pdf_es
-
-      - name: Build CV (HTML)
-        run: |
-          make html
-
-      - name: Deploy 🚀
-        if: success() && github.event_name == 'push'
-        # Don't use tags: https://julienrenaux.fr/2019/12/20/github-actions-security-risk/
-        uses: JamesIves/github-pages-deploy-action@049a95c516cd5723d8cfde79dc7a79fcdcbd6c97
         with:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-          BRANCH: gh-pages
-          FOLDER: _build
+          persist-credentials: false
+
+      - name: Install LaTeX
+        run: |
+          sudo apt-get update
+          sudo apt-get install make latexmk texlive texlive-latex-extra
+
+      - name: Build CV
+        run: |
+          make all
+
+      - name: Upload CV as an artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: cv
+          path: |
+            _output/cv.pdf
+
+  publish:
+    needs: [build]
+    runs-on: ubuntu-latest
+    env:
+      OUTPUT_DIR: _output/
+      # Name of the preview branch.
+      # REMEMBER: edit name in the other workflows as well.
+      PREVIEW_BRANCH: preview-pr${{ github.event.number }}
+      PDF_BRANCH: pdf
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          persist-credentials: false
+
+      - name: Download the built PDF
+        uses: actions/download-artifact@v2
+        with:
+          name: cv
+          path: _output
+
+      - name: Publish CV to preview branch
+        if: ${{ github.event_name == 'pull_request' }}
+        # Don't use tags: https://julienrenaux.fr/2019/12/20/github-actions-security-risk/
+        uses: peaceiris/actions-gh-pages@8a36f3edfc5d1cbae6b09e6f5a7d7b19e5b7a73b
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ${{ env.OUTPUT_DIR }}
+          publish_branch: ${{ env.PREVIEW_BRANCH }}
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
+          # Only keep the latest commit to avoid bloating the repository
+          force_orphan: true
+
+      - name: Publish CV to pdf branch
+        if: ${{ github.event_name == 'push' }}
+        # Don't use tags: https://julienrenaux.fr/2019/12/20/github-actions-security-risk/
+        uses: peaceiris/actions-gh-pages@8a36f3edfc5d1cbae6b09e6f5a7d7b19e5b7a73b
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ${{ env.OUTPUT_DIR }}
+          publish_branch: ${{ env.PDF_BRANCH }}
+          user_name: "github-actions[bot]"
+          user_email: "github-actions[bot]@users.noreply.github.com"
+          # Only keep the latest commit to avoid bloating the repository
+          force_orphan: true

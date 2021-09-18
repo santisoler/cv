@@ -1,0 +1,482 @@
+\documentclass[a4paper,12pt]{moderncv}
+\moderncvtheme[orange]{classic}
+\usepackage[utf8]{inputenc}
+\usepackage[scale=0.8]{geometry}
+\recomputelengths
+
+\urlstyle{same}
+
+% Information
+% -----------
+\firstname{Santiago}
+\familyname{Soler}
+\email{santiago.r.soler@gmail.com}
+\extrainfo{
+    \url{https://www.santisoler.com}
+    \\
+    ORCID:
+    \href{https://orcid.org/0000-0001-9202-5317}{0000-0001-9202-5317}
+    \\
+    GitHub: \href{https://github.com/santisoler}{@santisoler}
+    \\
+    Last modified: \today{}
+}
+\title{
+    \small
+    CONICET, Argentina
+    \\
+    Instituto Geofísico Sismológico Volponi, UNSJ, Argentina
+    \\
+    Member of the
+    \href{https://www.compgeolab.org}{Computer-Oriented Geoscience Lab}
+}
+% \address{street and number}{postcode city}
+% \mobile{mobile}: optional
+% \phone{phone}: optional
+% \fax{fax}: optional
+% \photo[64pt]{picture}
+% \quote{Some quote}
+
+
+% Authors
+% -------
+\newcommand{\me}{\emph{Santiago Soler}}
+\newcommand{\agustina}{\href{https://aguspesce.github.io}{Agustina Pesce}}
+\newcommand{\andrea}{\href{https://www.andreabalza.com/}{Andrea Balza Morales}}
+\newcommand{\guido}{Guido M. Gianni}
+\newcommand{\leo}{\href{https://www.leouieda.com}{Leonardo Uieda}}
+\newcommand{\mario}{Mario Giménez}
+\newcommand{\remirampin}{Rémi Rampin}
+\newcommand{\hugovankemenade}{Hugo vanKemenade}
+\newcommand{\matthewturk}{Matthew Turk}
+\newcommand{\danshapero}{Daniel Shapero}
+\newcommand{\andersonbanihirwe}{Anderson Banihirwe}
+\newcommand{\johnleeman}{John Leeman}
+\newcommand{\orlando}{Orlando Álvarez}
+\newcommand{\folguera}{Andrés Folguera}
+\newcommand{\wenjinchen}{Wenjin Chen}
+\newcommand{\pichu}{Héctor P.A. García}
+\newcommand{\mae}{Marianela N. Lupari}
+\newcommand{\marcos}{Marcos A. Sánchez}
+\newcommand{\paco}{Francisco Ruiz}
+\newcommand{\fede}{Federico G. Lince Klinger}
+
+% doi function
+\newcommand{\doi}[1]{
+    \href{https://doi.org/#1}{#1}
+}
+
+
+\begin{document}
+\maketitle
+
+% Example of cventry
+% \cventry[1em]
+% {}  % date
+% {} % degree/job title
+% {} % institution
+% {} % localization
+% {} % grade (optional)
+% {} % description (optional)
+
+\section{Education}
+
+\cventry[1em]
+{Since 2017}
+{PhD Student in Geophysics}
+{
+    Facultad de Ciencias Exactas, Físicas y Naturales,
+    Universidad Nacional de San Juan
+}
+{San Juan, Argentina}
+{}
+{\emph{Advisor}: \mario{}, \emph{Co-advisor}: \leo{}}
+
+\cventry[1em]
+{2009--2015}
+{Licentiate in Physics}
+{
+    Facultad de Ciencias Exactas, Ingeniería y Agrimensura,
+    Universidad Nacional de Rosario
+}
+{Rosario, Santa Fe, Argentina}
+{}
+{
+    \emph{Thesis}: Spectral methods for the determination of the Curie Depth
+    Point and Elastic Thickness of Earth's Crust
+    \\
+    \emph{Advisor}: \mario{}
+}
+
+
+\section{Awards and Scholarships}
+
+\cvline
+{2017--2022}
+{CONICET PhD Scholarship}
+
+\cvline
+{2019}
+{Early Career Scientist's Travel Support for EGU2020 General Assembly}
+
+\cvline
+{2016}
+{Fundación Josefina Prats Award - Licenciatura en Física}
+
+\cvline
+{2012}
+{University Scholarship granted by Fundación del Banco de Santa Fe}
+
+\cvline
+{2012}
+{Santander Río National Award to Academic Merit 2012}
+
+\cvline
+{2012}
+{Josefina Prats Award - IFIR 2012}
+
+
+
+\section{Teaching}
+
+\cventry[1em]
+{2021}  % date
+{Certified Carpentries Instructor} % degree/job title
+{The Carpentries} % institution
+{} % localization
+{} % grade (optional)
+{} % description (optional)
+
+\cventry[1em]
+{2021}  % date
+{Tutorial: Processing gravity and magnetic data with Harmonica}
+{Transform21, Software Underground}
+{} % localization
+{} % grade (optional)
+{\me{}, \andrea{} and \agustina{}} % description (optional)
+
+\cventry[1em]
+{2020}  % date
+{Introducción a Python para Científicxs} % degree/job title
+{Universidad Nacional de San Juan} % institution
+{San Juan, Argentina} % localization
+{} % grade (optional)
+{\me{}} % description (optional)
+
+\cventry[1em]
+{2020}
+{Tutorial: From scattered data to gridded products using Verde}
+{Transform 2020, Software Underground}
+{}
+{}
+{\leo{} and \me{}}
+
+\cventry[1em]
+{2017--2019}
+{Physics I and Statistical Mechanics}
+{
+    Departamento de Geofísica y Astronomía,
+    Facultad de Ciencias Exactas, Físicas y Naturales,
+    Universidad Nacional de San Juan
+}
+{San Juan, Argentina}
+{}
+{Jefe de Trabajos Prácticos (assistant professor of practice)}
+
+\cventry[1em]
+{2013--2015}
+{Introduction to Science and Physics I}
+{
+    Departamento de Física,
+    Escuela de Ciencias Exactas y Naturales,
+    Facultad de Ciencias Exactas, Ingeniería y Agrimensura,
+    Universidad Nacional de Rosario
+}
+{Rosario, Santa Fe, Argentina}
+{}
+{Ayudante de Segunda (undergraduate assistant teacher)}
+
+
+\section{Publications}
+
+\subsection{Peer-reviewed scientific articles}
+
+\cventry[1em]
+{2021}
+{Gradient-boosted equivalent sources}
+{Geophysical Journal International}
+{}
+{}
+{
+    \me{} and \leo{}
+    \\
+    doi: \doi{10.1093/gji/ggab297}
+}
+
+\cventry[1em]
+{2020}
+{Pooch: A friend to fetch your data files}
+{Journal of Open-Source Software}
+{}
+{}
+{
+    \leo{}, \me{}, \remirampin{}, \hugovankemenade{}, \matthewturk{},
+    \danshapero{}, \andersonbanihirwe{} and \johnleeman{}
+    \\
+    doi: \doi{10.21105/joss.01943}
+}
+
+\cventry[1em]
+{2019}
+{
+    Gravitational field calculation in spherical coordinates using variable
+    densities in depth
+}
+{Geophysical Journal International}
+{}
+{}
+{
+    \me{}, \agustina{}, \mario{} and \leo{}
+    \\
+    doi: \doi{10.1093/gji/ggz277}
+}
+
+\cventry[1em]
+{2018}
+{
+    Transient plate contraction between two simultaneous slab windows:
+    Insights from Paleogene tectonics of the Patagonian Andes
+}
+{Journal of Geodynamics}
+{}
+{}
+{
+    \guido{}, \agustina{}, and \me{}
+    \\
+    doi: \doi{10.1016/j.jog.2018.07.008}
+}
+
+\cventry[1em]
+{2017}
+{
+    Analysis of the Illapel MW=8.3 thrust earthquake rupture zone using
+    GOCE-derived gradients
+}
+{Pure and Applied Geophysics}
+{}
+{}
+{
+    \orlando{}, \agustina{}, \mario{}, \folguera{}, \me{} and \wenjinchen{}
+    \\
+    doi: \doi{10.1007/s00024-016-1376-y}
+}
+
+\cventry[1em]
+{2017}
+{
+    Effective elastic thickness in the Central Andes.
+    Correlation to orogenic deformation styles and lower crust high-gravity
+    anomaly
+}
+{Journal of South American Earth Sciences}
+{}
+{}
+{
+    \pichu{}, \guido{}, \mae{}, \marcos{}, \me{}, \paco{} and \fede{}
+    \\
+    doi: \doi{10.1016/j.jsames.2017.11.021}
+}
+
+
+\newpage
+\subsection{Conference proceedings and presentations}
+
+\cventry[1em]
+{2021}
+{Fatiando a Terra: Open-source tools for geophysics}
+{Geophysical Society of Houston}
+{}
+{}
+{\leo{}, \me{} and \agustina{}}
+
+\cventry[1em]
+{2021}
+{
+    Gradient-boosted equivalent sources for gridding large gravity and
+    magnetic datasets
+}
+{EGU21 General Assembly}
+{}
+{}
+{
+    \me{} and \leo{}
+    \\
+    doi: \doi{10.5194/egusphere-egu21-1276}
+}
+
+\cventry[1em]
+{2020}
+{How to grid gravmag data with Harmonica}
+{Transform 2020, Software Underground}
+{}
+{Lightning talk}
+{}
+
+\cventry[1em]
+{2020}
+{A better strategy for interpolating gravity and magnetic data}
+{EGU2020, General Assembly}
+{}
+{}
+{\me{} and \leo{}}
+
+\cventry[1em]
+{2020}
+{
+    Evaluating the accuracy of equivalent-source predictions using
+    cross-validation
+}
+{EGU2020, General Assembly}
+{}
+{}
+{\me{} and \leo{}}
+
+\cventry[1em]
+{2019}
+{Experiencias en el desarrollo de Fatiando a Terra}
+{Taller Argentino de Computación Científica}
+{San Luis, Argentina}
+{}
+{doi: \doi{10.6084/m9.figshare.10013006}}
+
+\cventry[1em]
+{2019}
+{Gravitational fields of tesseroids with variable density}
+{LAPIS 2019}
+{La Plata, Buenos Aires, Argentina}
+{}
+{
+    \me{}, \agustina{}, \mario{} and \leo{}
+    \\
+    doi: \doi{10.6084/m9.figshare.8242439}
+}
+
+\cventry[1em]
+{2017}
+{Tesseroides con densidad variable: modelo directo con software libre}
+{
+    I Congreso Binacional de Investigación Científica y V Encuentro de Jóvenes
+    Investigadores
+}
+{San Juan, Argentina}
+{}
+{\me{}, \agustina{}, \leo{} and \mario{}}
+
+\cventry[1em]
+{2017}
+{Magnetic characterization of the Loncopué trough, Argentina}
+{XX Congreso Geológico Argentino}
+{}
+{}
+{\agustina{}, \mario{}, \folguera{}, \guido{} and \me{}}
+
+\cventry[1em]
+{2017}
+{Magnetic characterization of the Loncopué trough, Argentina}
+{XX Congreso Geológico Argentino}
+{}
+{}
+{\agustina{}, \mario{}, \folguera{}, \guido{} and \me{}}
+
+\cventry[1em]
+{2017}
+{
+    Anomalías gravimétricas y magnéticas corticales del sur de la provincia
+    volcánica de La Payenia, asociadas al tearing de la Placa de Nazca
+    y anomalías mantélicas
+}
+{XX Congreso Geológico Argentino}
+{}
+{}
+{
+    Ana Astort, Bruno Colavitto, Lucía Sagripanti, \pichu{}, \me{}, \paco{}
+    and \folguera{}
+}
+
+\cventry[1em]
+{2016}
+{
+   Análisis flexural de la cuenca cretácico-paleógena del noroeste
+   argentino. La subcuenca Lomas de Olmedo: zona de transición entre dos
+   mecanismos de deformación distintos.
+}
+{Primer Simposio de Tectónica Sudamericana}
+{}
+{}
+{\pichu{}, \me{}, \guido{}, and \paco{}}
+
+\cventry[1em]
+{2016}
+{
+    Crustal Magmatic Anomalies from the Southern Payenia Volcanic Plateau,
+    Associated with The Nazca Plate Tearing and Plume Head from Gravimetric
+    and Magnetic Data
+}
+{Primer Simposio de Tectónica Sudamericana}
+{}
+{}
+{Ana Astort, \paco{}, \pichu{}, \me{}, Andrés Echaurren and \folguera{}}
+
+
+\section{Open-source software}
+
+\cventry
+{Since 2015}
+{Fatiando a Terra: Open source tools for geophysics}
+{}
+{}
+{}
+{
+    Developer and maintainer
+    \\
+    \url{https://www.fatiando.org}
+}
+
+\section{Reviewer}
+
+\cvlistitem{
+    \href
+    {https://openresearchsoftware.metajnl.com/}
+    {Journal of Open Research Software}
+}
+\cvlistitem{
+    \href
+    {https://www.sciencedirect.com/journal/journal-of-applied-geophysics}
+    {Journal of Applied Geophysics}
+}
+\cvlistitem{
+    \href
+    {https://joss.theoj.org/}
+    {Journal of Open-Source Software}
+}
+
+
+\section{Technical Skills}
+
+\cvline{Programming}
+{Python, bash, FORTRAN, C}
+\cvline{Markup}
+{Markdown, LaTeX, HTML, CSS, Bootstrap}{
+\cvline{Tools}
+{
+    GNU/Linux, Unix Terminal, git, GitHub, Jupyter Notebooks, GNU Make,
+    Inkscape, GIMP, GMT, maxima
+}
+
+\section{Languages}
+
+\cvlanguage{Spanish}{Native}{}
+\cvlanguage{English}{Advanced}{}
+\cvlanguage{Italian}{Beginner}{}
+
+\end{document}
