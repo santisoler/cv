@@ -1,0 +1,16 @@
+# general latex build output files
+*.aux
+*.bbl
+*.blg
+*.fdb_latexmk
+*.fls
+*.log
+*.out
+*.synctex.gz
+
+# template.tex output
+# move to *.pdf once manual is done
+template.pdf
+
+# release tarballs
+moderncv-*.tar.gz
