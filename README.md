@@ -1,6 +1,7 @@
 # Curriculum Vitae
 
-Sources for building my academic CV.
+Sources for building my academic CV, written in LaTeX and using the
+[`moderncv`](https://www.ctan.org/pkg/moderncv) document class.
 
 Download a [PDF version of my CV](https://santisoler.github.io/cv/cv.pdf).
 
