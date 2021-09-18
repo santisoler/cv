@@ -1,4 +1,4 @@
-# Comment on the PR with a link to the preview paper PDF
+# Comment on the PR with a link to a preview of the CV
 name: cv-preview-comment
 
 on:
