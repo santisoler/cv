@@ -14,6 +14,8 @@ Requirements (Ubuntu or Debian):
 - `latexmk`
 - `texlive`
 - `texlive-latex-extra`
+- `texlive-xetex`
+- `texlive-fonts-extra`
 
 For creating the PDF:
 
