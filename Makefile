@@ -1,7 +1,7 @@
 PROJECT=cv
 OUTDIR=_output
 LATEX=latexmk
-LATEX_ARGS=-pdf -outdir=$(OUTDIR)
+LATEX_ARGS=-xelatex -outdir=$(OUTDIR)
 PDF_READER="xdg-open"
 
 .PHONY: all clean show
