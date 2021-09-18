@@ -4,3 +4,4 @@ texlive
 texlive-latex-extra
 texlive-xetex
 texlive-fonts-extra
+fonts-font-awesome
