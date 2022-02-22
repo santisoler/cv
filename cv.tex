@@ -1,0 +1,467 @@
+\documentclass[11pt, a4paper]{article}
+\usepackage[utf8]{inputenc}
+\usepackage[vmargin=3cm, hmargin=2.5cm]{geometry}
+\usepackage{mathpazo} % Use the Palatino font by default
+\usepackage{lastpage} % get the total page numbers (\pageref{LastPage})
+\usepackage{enumitem} % fancier lists
+
+% Define custom environments
+\usepackage{environ}
+
+% Configure paragraph spacings
+\usepackage{setspace} % change line spacing
+\setlength{\parindent}{0pt} % Remove indentations
+
+% Configure the font style for sections
+\usepackage{sectsty}
+\sectionfont{\bfseries\LARGE\selectfont\sectionrule{0px}{0px}{-0.4em}{0.5pt}}
+\subsectionfont{\mdseries\large\selectfont\uppercase}
+
+% Disable number of sections. Use this instead of "section*" so that the
+% sections still appear as PDF bookmarks. Otherwise, would have to add the
+% table of contents entries manually.
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+
+% Configure fancyhdr
+\usepackage{fancyhdr}
+\fancypagestyle{fancy}{
+    \fancyhf{}  % clear current head and footer
+    \fancyfoot[C]{
+        {\small \thepage\ of \pageref{LastPage} }
+    }
+}
+\renewcommand{\headrulewidth}{0pt} % remove header rule
+\pagestyle{fancy}
+
+% Define new colors
+\usepackage{xcolor}
+\definecolor{mygray}{HTML}{555555}
+
+ % Define multipage tables (used for cv entries)
+\usepackage{tabularx}
+\usepackage{ltablex}
+
+% Boolean operators
+\usepackage{ifthen}
+
+% -----------
+% Information
+% -----------
+\newcommand{\firstname}{Santiago}
+\newcommand{\middlename}{Rubén}
+\newcommand{\familyname}{Soler}
+\newcommand{\email}{santiago.r.soler@gmail.com}
+\newcommand{\website}{www.santisoler.com}
+\newcommand{\github}{santisoler}
+\newcommand{\orcid}{0000-0001-9202-5317}
+
+
+% ------------
+% Institutions
+% ------------
+\newcommand{\conicet}{%
+    Consejo Nacional de Investigaciones Científicas y Técnicas%
+}
+\newcommand{\igsv}{Instituto Geofísico Sismológico Volponi}
+\newcommand{\fcefn}{%
+    Facultad de Ciencias Exactas, Físicas y Naturales%
+}
+\newcommand{\unsj}{Universidad Nacional de San Juan}
+\newcommand{\ecen}{Escuela de Ciencias Exactas y Naturales}
+\newcommand{\fceia}{%
+    Facultad de Ciencias Exactas, Ingeniería y Agrimensura%
+}
+\newcommand{\unr}{Universidad Nacional de Rosario}
+
+
+% -------
+% Authors
+% -------
+\newcommand{\me}{\href{https://www.santisoler.com}{Santiago Soler}}
+\newcommand{\agustina}{\href{https://aguspesce.github.io}{Agustina Pesce}}
+\newcommand{\andrea}{\href{https://www.andreabalza.com/}{Andrea Balza Morales}}
+\newcommand{\guido}{Guido M. Gianni}
+\newcommand{\leo}{\href{https://www.leouieda.com}{Leonardo Uieda}}
+\newcommand{\mario}{Mario Giménez}
+\newcommand{\remirampin}{Rémi Rampin}
+\newcommand{\hugovankemenade}{Hugo vanKemenade}
+\newcommand{\matthewturk}{Matthew Turk}
+\newcommand{\danshapero}{Daniel Shapero}
+\newcommand{\andersonbanihirwe}{Anderson Banihirwe}
+\newcommand{\johnleeman}{John Leeman}
+\newcommand{\orlando}{Orlando Álvarez}
+\newcommand{\folguera}{Andrés Folguera}
+\newcommand{\wenjinchen}{Wenjin Chen}
+\newcommand{\pichu}{Héctor P.A. García}
+\newcommand{\mae}{Marianela N. Lupari}
+\newcommand{\marcos}{Marcos A. Sánchez}
+\newcommand{\paco}{Francisco Ruiz}
+\newcommand{\fede}{Federico G. Lince Klinger}
+
+% --------------------------
+% Variables and environments
+% --------------------------
+% New variables
+\newcommand{\fullname}{\firstname{} \middlename{} \familyname}
+
+% Titles and headings
+\newcommand{\maintitle}[1]{%
+    \begin{flushleft}
+        \textbf{\Huge #1}
+    \end{flushleft}
+}
+\newcommand{\subtitle}[1]{%
+    \begin{flushleft}
+        {\LARGE #1}
+    \end{flushleft}
+}
+
+% Entries
+\NewEnviron{cventries}{
+    \begin{tabularx}{\textwidth}{p{0.12\textwidth} p{0.82\textwidth}}
+    \BODY
+    \end{tabularx}
+}
+\newcommand{\singleline}[2]{{#1} & {#2} \\}
+\newcommand{\multiline}[3]{{#1} & {\textbf{#2} \newline {#3}} \vspace{0.6em} \\}
+\newcommand{\paper}[5]{%
+    {#1}
+    &
+    {\textbf{#2}, \emph{#3} \newline {#4} \newline doi:~\DOI{#5}}
+    \vspace{0.75em} \\
+}
+\newcommand{\talk}[5]{%
+    {#1}
+    &
+    {\textbf{#2}, \emph{#3} \newline {#4} \ifthenelse{\equal{#5}{}}{}{\newline doi:~\DOI{#5}}}
+    \vspace{0.75em} \\
+}
+
+% Macros
+\newcommand{\MAIL}[1]{%
+    \href{mailto:#1}{#1}
+}
+\newcommand{\GITHUB}[1]{%
+    \href{https://github.com/#1}{github.com/#1}
+}
+\newcommand{\ORCID}[1]{%
+    \href{https://orcid.org/#1}{#1}
+}
+\newcommand{\WEBSITE}[1]{%
+    \href{https://#1}{#1}
+}
+\newcommand{\DOI}[1]{%
+    \href{https://www.doi.org/#1}{#1}
+}
+
+% ------------------
+% Configure hyperref
+% ------------------
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    allcolors=[rgb]{0, 0.451, 0.753},
+    pdftitle={\fullname{}'s Curriculum Vitae},
+    pdfauthor={\fullname},
+    pdftex,
+}
+\urlstyle{same}
+
+% ------------------------------------------------------------------------
+
+\begin{document}
+
+
+% ------
+% Header
+% ------
+\maintitle{\fullname}
+\subtitle{PhD in Geophysics}
+
+\begin{minipage}[t]{0.62\linewidth}
+    \begin{flushleft}
+        \conicet \\
+        \vspace{0.5em}
+        \igsv, \\ \fcefn, \\ \unsj \\
+    \end{flushleft}
+\end{minipage}
+\hfill
+\begin{minipage}[t]{0.38\linewidth}
+    \begin{flushright}
+        \textbf{email} \MAIL{\email}
+        \\
+        \textbf{website} \WEBSITE{\website}
+        \\
+        \textbf{ORCID} \ORCID{\orcid}
+        \\
+        \textbf{GitHub} \GITHUB{\github}
+        \\
+        \color{mygray}{Last modified: \today}
+    \end{flushright}
+\end{minipage}
+
+
+\section{Professional Appointments}
+
+\begin{cventries}
+    \multiline{2017 -- 2019}{Assistant Professor of Practice}{%
+        \fcefn,\newline \unsj, San Juan, Argentina
+    }
+    \multiline{2013 -- 2015}{Student Teacher}{%
+        \fceia,\newline \unr, Rosario, Argentina
+    }
+\end{cventries}
+
+\section{Education}
+
+\begin{cventries}
+    \multiline{2017 -- 2022}{PhD in Geophysics}{
+        \fcefn,\newline \unsj, San Juan, Argentina
+    }
+
+    \multiline{2009 -- 2015}{Licentiate in Physics}{
+        \fceia,\newline \unr, Rosario, Argentina
+    }
+\end{cventries}
+
+
+\section{Awards and Scholarships}
+
+\begin{cventries}
+    \singleline{2017 -- 2022}{PhD Scholarship from CONICET}
+    \singleline{2019}{%
+        Early Career Scientist's Travel Support for EGU2020 General Assembly
+    }
+    \singleline{2016}{Fundación Josefina Prats Award - Licenciatura en Física}
+    \singleline{2012}{%
+        University Scholarship granted by Fundación del Banco de Santa Fe
+    }
+    \singleline{2012}{Santander Río National Award to Academic Merit 2012}
+    \singleline{2012}{Josefina Prats Award - IFIR 2012}
+\end{cventries}
+
+
+\newpage
+\section{Teaching Experience}
+
+\subsection{Undergraduate Courses}
+
+\begin{cventries}
+    \multiline{2017 -- 2019}{Statistical Mechanics}{%
+        Department of Geophysics and Astronomy, \newline \fcefn, \newline \unsj
+    }
+    \multiline{2017 -- 2019}{Physics I}{%
+        Department of Geophysics and Astronomy, \newline \fcefn, \newline \unsj
+    }
+    \multiline{2013 -- 2015}{Physics I}{%
+        Physics Department, \newline \ecen \newline \fceia, \newline \unr
+    }
+    \multiline{2013 -- 2015}{Introduction to Science}{%
+        Physics Department, \newline \ecen \newline \fceia, \newline \unr
+    }
+\end{cventries}
+
+\subsection{Workshops and Tutorials}
+
+\begin{cventries}
+    \multiline{2021}
+        {Tutorial: Processing gravity and magnetic data with Harmonica}
+        {
+            \me{}, \andrea{} and \agustina{}
+            \newline
+            Transform21, Software Underground
+            \newline
+            \url{https://youtu.be/0bxZcCAr6bw}
+        }
+    \multiline{2020}
+        {Introducción a Python para Científicxs}
+        {
+            \unsj, San Juan, Argentina
+            \newline
+            \url{https://youtu.be/LS_e9gqTM2s}
+        }
+    \multiline{2020}
+        {Tutorial: From scattered data to gridded products using Verde}
+        {
+            \leo{} and \me{}
+            \newline
+            Transform 2020, Software Underground
+            \newline
+            \url{https://youtu.be/-xZdNdvzm3E}
+        }
+\end{cventries}
+
+\section{Publications}
+
+\subsection{Peer-reviewed scientific articles}
+
+\begin{cventries}
+    \paper{2021}
+        {Gradient-boosted equivalent sources}
+        {Geophysical Journal International}
+        {\me\ and \leo}
+        {10.1093/gji/ggab297}
+
+    \paper{2020}
+        {Pooch: A friend to fetch your data files}
+        {Journal of Open-Source Software}
+        {\leo, \me, \remirampin, \hugovankemenade, \matthewturk, \danshapero,
+        \andersonbanihirwe\ and \johnleeman}
+        {10.21105/joss.01943}
+
+    \paper{2019}
+        {Gravitational field calculation in spherical coordinates using
+        variable densities in depth}
+        {Geophysical Journal International}
+        {\me, \agustina, \mario\ and \leo}
+        {10.1093/gji/ggz277}
+
+    \paper{2018}
+        {Transient plate contraction between two simultaneous slab windows:
+        Insights from Paleogene tectonics of the Patagonian Andes}
+        {Journal of Geodynamics}
+        {\guido, \agustina\ and \me}
+        {10.1016/j.jog.2018.07.008}
+
+    \paper{2017}
+        {Analysis of the Illapel MW=8.3 thrust earthquake rupture zone using
+        GOCE-derived gradients}
+        {Pure and Applied Geophysics}
+        {\orlando, \agustina, \mario, \folguera, \me\ and \wenjinchen}
+        {10.1007/s00024-016-1376-y}
+
+    \paper{2017}
+        {Effective elastic thickness in the Central Andes. Correlation to
+        orogenic deformation styles and lower crust high-gravity anomaly}
+        {Journal of South American Earth Sciences}
+        {\pichu, \guido, \mae, \marcos, \me, \paco\ and \fede}
+        {10.1016/j.jsames.2017.11.021}
+\end{cventries}
+
+
+\subsection{Conference Proceedings and Talks}
+
+\begin{cventries}
+\talk{2021}
+    {Fatiando a Terra: Open-source tools for geophysics}
+    {Geophysical Society of Houston}
+    {\leo, \me\ and \agustina}
+    {}
+
+\talk{2021}
+    {Gradient-boosted equivalent sources for gridding large gravity and
+    magnetic datasets}
+    {EGU21 General Assembly}
+    {\me\ and \leo}
+    {10.5194/egusphere-egu21-1276}
+
+\talk{2020}
+    {How to grid gravmag data with Harmonica}
+    {Transform 2020, Software Underground}
+    {Lightning talk: \url{https://youtu.be/NtBDf7d7mwM?t=4245}}
+    {}
+
+\talk{2020}
+    {A better strategy for interpolating gravity and magnetic data}
+    {EGU2020, General Assembly}
+    {\me\ and \leo}
+    {10.6084/m9.figshare.12217973}
+
+\talk{2020}
+    {Evaluating the accuracy of equivalent-source predictions using cross-validation}
+    {EGU2020, General Assembly}
+    {\me\ and \leo}
+    {10.5194/egusphere-egu2020-15729}
+
+\talk{2019}
+    {Experiencias en el desarrollo de Fatiando a Terra}
+    {Taller Argentino de Computación Científica}
+    {}
+    {10.6084/m9.figshare.10013006}
+
+\talk{2019}
+    {Gravitational fields of tesseroids with variable density}
+    {LAPIS 2019}
+    {\me, \agustina, \mario\ and \leo}
+    {10.6084/m9.figshare.8242439}
+
+\talk{2017}
+    {Tesseroides con densidad variable: modelo directo con software libre}
+    {I Congreso Binacional de Investigación Científica y V Encuentro de Jóvenes
+    Investigadores}
+    {\me, \agustina, \leo\ and \mario}
+    {}
+
+\talk{2017}
+    {Magnetic characterization of the Loncopué trough, Argentina}
+    {XX Congreso Geológico Argentino}
+    {\agustina, \mario, \folguera, \guido\ and \me}
+    {}
+
+\talk{2017}
+    {Magnetic characterization of the Loncopué trough, Argentina}
+    {XX Congreso Geológico Argentino}
+    {\agustina, \mario, \folguera, \guido\ and \me}
+    {}
+
+\talk{2017}
+    {Anomalías gravimétricas y magnéticas corticales del sur de la provincia volcánica de La Payenia, asociadas al tearing de la Placa de Nazca y anomalías mantélicas}
+    {XX Congreso Geológico Argentino}
+    {Ana Astort, Bruno Colavitto, Lucía Sagripanti, \pichu, \me, \paco\ and \folguera}
+    {}
+
+\talk{2016}
+    {Análisis flexural de la cuenca cretácico-paleógena del noroeste argentino. La subcuenca Lomas de Olmedo: zona de transición entre dos mecanismos de deformación distintos}
+    {Primer Simposio de Tectónica Sudamericana}
+    {\pichu, \me, \guido\ and \paco}
+    {}
+
+\talk{2016}
+    {Crustal Magmatic Anomalies from the Southern Payenia Volcanic Plateau, Associated with The Nazca Plate Tearing and Plume Head from Gravimetric and Magnetic Data}
+    {Primer Simposio de Tectónica Sudamericana}
+    {Ana Astort, \paco, \pichu, \me, Andrés Echaurren and \folguera}
+    {}
+
+\end{cventries}
+
+\newpage
+\section{Open-source Software Development}
+
+\begin{cventries}
+    \multiline{Since 2015}
+        {Fatiando a Terra: Open source tools for geophysics}
+        {Developer and maintainer \newline \url{https://www.fatiando.org}}
+\end{cventries}
+
+\section{Reviewer}
+
+\begin{itemize}[label={}, leftmargin=*]
+    \item \href{https://openresearchsoftware.metajnl.com}{Journal of Open Research Software}
+    \item \href{https://www.sciencedirect.com/journal/journal-of-applied-geophysics}{Journal of Applied Geophysics}
+    \item \href{https://joss.theoj.org/}{Journal of Open-Source Software}
+\end{itemize}
+
+\section{Technical Skills}
+
+\begin{description}
+    \item[Programming] Python, Numba, Cython, bash, FORTRAN, C
+    \item[Markup] Markdown, LaTeX, HTML, RST
+    \item[WebDev] CSS, Bootstrap, Normalize, Static Site Generators (jekyll,
+        urubu)
+    \item[DevOps] GNU/Linux, Unix terminal, VIM, Neovim, git, GNU Make, SSH
+    \item[Graphic Design] Inkscape, GIMP, imagemagick, Darktable
+    \item[Other tools] Jupyter Notebooks, LibreOffice Suite, PGP, GitHub
+        Actions, Nextcloud, maxima
+\end{description}
+
+\section{Languages}
+
+\begin{description}
+    \item[Spanish] Native
+    \item[English] Advanced
+    \item[Italian] Beginner
+\end{description}
+
+\end{document}
