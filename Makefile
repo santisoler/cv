@@ -1,7 +1,7 @@
 PROJECT=cv
 OUTDIR=_output
 LATEX=latexmk
-LATEX_ARGS=-xelatex -outdir=$(OUTDIR)
+LATEX_ARGS=-pdf -outdir=$(OUTDIR)
 PDF_READER="xdg-open"
 
 .PHONY: all clean show
@@ -18,4 +18,4 @@ $(OUTDIR)/$(PROJECT).pdf: $(PROJECT).tex | $(OUTDIR)
 	$(LATEX) $(LATEX_ARGS) $<
 
 $(OUTDIR):
-	mkdir $(OUTDIR)
+	mkdir -p $(OUTDIR)
