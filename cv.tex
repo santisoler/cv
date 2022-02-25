@@ -29,12 +29,8 @@
 
 % Configure fancyhdr
 \usepackage{fancyhdr}
-\fancypagestyle{fancy}{
-    \fancyhf{}  % clear current head and footer
-    \fancyfoot[C]{
-        {\small \thepage\ of \pageref{LastPage} }
-    }
-}
+\fancyhf{}  % clear current head and footer
+\fancyfoot[C]{\small \thepage\ of \pageref{LastPage}}
 \renewcommand{\headrulewidth}{0cm} % remove header rule
 \pagestyle{fancy}
 
