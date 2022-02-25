@@ -18,4 +18,4 @@ $(OUTDIR)/$(PROJECT).pdf: $(PROJECT).tex | $(OUTDIR)
 	$(LATEX) $(LATEX_ARGS) $<
 
 $(OUTDIR):
-	mkdir $(OUTDIR)
+	mkdir -p $(OUTDIR)
