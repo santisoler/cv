@@ -149,7 +149,11 @@
 \newcommand{\talk}[5]{%
     {#1}
     &
-    {\textbf{#2}, \emph{#3} \newline {#4} \ifthenelse{\equal{#5}{}}{}{\newline doi:~\DOI{#5}}}
+    {%
+        \textbf{#2}, \emph{#3}%
+        \ifthenelse{\equal{#4}{}}{}{\newline {#4}}%
+        \ifthenelse{\equal{#5}{}}{}{\newline doi:~\DOI{#5}}%
+    }
     \vspace{\entriespad} \\
 }
 
@@ -453,6 +457,8 @@
 
 \end{cventries}
 
+
+\newpage
 \section{Open-source Software Development}
 
 \begin{cventries}
