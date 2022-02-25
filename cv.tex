@@ -14,13 +14,23 @@
 \usepackage[none]{hyphenat}
 
 % Configure paragraph spacings
-\usepackage{setspace} % change line spacing
 \setlength{\parindent}{0cm} % Remove indentations
 
 % Configure the font style for sections
-\usepackage{sectsty}
-\sectionfont{\bfseries\LARGE\selectfont\sectionrule{0cm}{0cm}{-0.4em}{0.1mm}}
-\subsectionfont{\mdseries\large\selectfont\uppercase}
+\usepackage{titlesec}
+\titleformat{\section}
+    [hang]
+    {\normalfont\LARGE\bfseries}
+    {}
+    {0pt}
+    {}
+    [\titlerule]
+\titleformat{\subsection}
+    [hang]
+    {\large\MakeUppercase}
+    {}
+    {0pt}
+    {}
 
 % Disable number of sections. Use this instead of "section*" so that the
 % sections still appear as PDF bookmarks. Otherwise, would have to add the
@@ -121,24 +131,26 @@
 }
 
 % Entries
+\newcommand{\entriespad}{0.75em}
 \NewEnviron{cventries}{
+    \vspace{-1em}
     \begin{tabularx}{\textwidth}{p{0.12\textwidth} p{0.82\textwidth}}
     \BODY
     \end{tabularx}
 }
-\newcommand{\singleline}[2]{{#1} & {#2} \\}
+\newcommand{\singleline}[2]{{#1} & {#2} \vspace{\entriespad} \\}
 \newcommand{\multiline}[3]{{#1} & {\textbf{#2} \newline {#3}} \vspace{0.6em} \\}
 \newcommand{\paper}[5]{%
     {#1}
     &
     {\textbf{#2}, \emph{#3} \newline {#4} \newline doi:~\DOI{#5}}
-    \vspace{0.75em} \\
+    \vspace{\entriespad} \\
 }
 \newcommand{\talk}[5]{%
     {#1}
     &
     {\textbf{#2}, \emph{#3} \newline {#4} \ifthenelse{\equal{#5}{}}{}{\newline doi:~\DOI{#5}}}
-    \vspace{0.75em} \\
+    \vspace{\entriespad} \\
 }
 
 % Macros
@@ -243,7 +255,6 @@
     \singleline{2012}{Josefina Prats Award - IFIR 2012}
 \end{cventries}
 
-\newpage
 \section{Certifications}
 
 \begin{cventries}
