@@ -19,18 +19,18 @@
 % Configure the font style for sections
 \usepackage{titlesec}
 \titleformat{\section}
-    [hang]
-    {\normalfont\LARGE\bfseries}
-    {}
-    {0pt}
-    {}
-    [\titlerule]
+    [hang] % the default shape for sections
+    {\normalfont\LARGE\bfseries} % format
+    {} % label
+    {0pt} % separation (left separation for hang)
+    {} % before title
+    [\titlerule] % after title
 \titleformat{\subsection}
-    [hang]
-    {\large\MakeUppercase}
-    {}
-    {0pt}
-    {}
+    [hang] % the default shape for sections
+    {\large\MakeUppercase} % format
+    {} % label
+    {0pt} % separation (left separation for hang)
+    {} % before title
 
 % Disable number of sections. Use this instead of "section*" so that the
 % sections still appear as PDF bookmarks. Otherwise, would have to add the
