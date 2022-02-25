@@ -1,9 +1,11 @@
 \documentclass[11pt, a4paper]{article}
 \usepackage[utf8]{inputenc}
 \usepackage[vmargin=3cm, hmargin=2.5cm]{geometry}
-\usepackage{mathpazo} % Use the Palatino font by default
-\usepackage{lastpage} % get the total page numbers (\pageref{LastPage})
 \usepackage{enumitem} % fancier lists
+
+% Use Palatino font
+\usepackage{fontspec}
+\setmainfont[BoldFont=texgyrepagella-bold.otf, ItalicFont=texgyrepagella-italic.otf, BoldItalicFont=texgyrepagella-bolditalic.otf]{texgyrepagella-regular.otf}
 
 % Define custom environments
 \usepackage{environ}
@@ -29,6 +31,7 @@
 
 % Configure fancyhdr
 \usepackage{fancyhdr}
+\usepackage{lastpage} % get the total page numbers (\pageref{LastPage})
 \fancyhf{}  % clear current head and footer
 \fancyfoot[C]{\small \thepage\ of \pageref{LastPage}}
 \renewcommand{\headrulewidth}{0cm} % remove header rule
