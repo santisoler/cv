@@ -8,6 +8,9 @@
 % Define custom environments
 \usepackage{environ}
 
+% Disable hyphenation in the CV
+\usepackage[none]{hyphenat}
+
 % Configure paragraph spacings
 \usepackage{setspace} % change line spacing
 \setlength{\parindent}{0cm} % Remove indentations
@@ -165,7 +168,6 @@
     allcolors=[rgb]{0, 0.451, 0.753},
     pdftitle={\fullname{}'s Curriculum Vitae},
     pdfauthor={\fullname},
-    pdftex,
 }
 \urlstyle{same}
 
