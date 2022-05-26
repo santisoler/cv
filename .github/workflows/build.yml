@@ -40,7 +40,9 @@ jobs:
           use-only-tar-bz2: true
 
       - name: List installed packages
-        run: mamba list
+        run: |
+          mamba activate cv
+          mamba list
 
       - name: Build CV
         run: |
