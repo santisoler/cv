@@ -40,11 +40,11 @@ jobs:
           use-only-tar-bz2: true
 
       - name: List installed packages
-        shell: bash -l {0}
+        shell: bash -l {0} # need to relogin in bash to enable mamba
         run: mamba list
 
       - name: Build CV
-        shell: bash -l {0}
+        shell: bash -l {0} # need to relogin in bash to enable mamba
         run: |
           make all
           touch _output/.nojekyll
