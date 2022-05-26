@@ -40,11 +40,11 @@ jobs:
           use-only-tar-bz2: true
 
       - name: List installed packages
-        run: |
-          conda activate cv
-          mamba list
+        shell: bash -l {0}
+        run: mamba list
 
       - name: Build CV
+        shell: bash -l {0}
         run: |
           make all
           touch _output/.nojekyll
