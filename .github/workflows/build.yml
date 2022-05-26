@@ -15,10 +15,22 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Install LaTeX
-        run: |
-          sudo apt-get update
-          xargs sudo apt-get install < requirements-ubuntu.txt
+      - name: Setup Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.9"
+
+      - name: Setup caching for tectonic
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/Tectonic
+          key: tectonic-${{ runner.os }}
+
+      - name: Install tectonic
+        run: pip install tectonic
+
+      - name: List installed packages
+        run: pip freeze
 
       - name: Build CV
         run: |
