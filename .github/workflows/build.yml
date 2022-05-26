@@ -15,26 +15,37 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Setup Python
-        uses: actions/setup-python@v2
-        with:
-          python-version: "3.9"
-
       - name: Setup caching for tectonic
         uses: actions/cache@v3
         with:
           path: ~/.cache/Tectonic
           key: tectonic-${{ runner.os }}
 
-      - name: Install tectonic
-        run: pip install tectonic
+      - name: Setup caching for conda packages
+        uses: actions/cache@v3
+        with:
+          path: ~/conda_pkgs_dir
+          key: conda-${{ runner.os }}-${{ hashFiles('environment.yml') }}
+
+      - name: Setup Miniconda
+        uses: conda-incubator/setup-miniconda@v2.1.1
+        with:
+          environment-file: environment.yml
+          activate-environment: cv
+          miniforge-variant: Mambaforge
+          miniforge-version: "latest"
+          use-mamba: true
+          channel-priority: strict
+          # Needed for caching
+          use-only-tar-bz2: true
 
       - name: List installed packages
-        run: pip freeze
+        run: mamba list
 
       - name: Build CV
         run: |
           make all
+          touch _output/.nojekyll
 
       - name: Upload CV as an artifact
         uses: actions/upload-artifact@v2
