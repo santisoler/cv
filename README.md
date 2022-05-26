@@ -58,3 +58,8 @@ tag.
 is available under the
 [`latest-markdown-2021`](https://github.com/santisoler/cv/releases/tag/latest-markdown-2021)
 tag.
+
+## License
+
+All LaTeX template source code is distributed under the [BSD 3-clause
+License](https://opensource.org/licenses/BSD-3-Clause).
