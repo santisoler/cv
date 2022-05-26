@@ -1,6 +1,7 @@
 name: cv
 channels:
   - conda-forge
+  - default
 dependencies:
   - python
   - tectonic
