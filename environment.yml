@@ -1,0 +1,6 @@
+name: cv
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - tectonic
