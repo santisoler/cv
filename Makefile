@@ -1,7 +1,7 @@
 PROJECT=cv
 OUTDIR=_output
 LATEX=tectonic
-LATEX_ARGS=-outdir=$(OUTDIR)
+LATEX_ARGS=--outdir=$(OUTDIR)
 PDF_READER="xdg-open"
 
 .PHONY: all clean show
