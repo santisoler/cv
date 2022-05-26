@@ -41,7 +41,7 @@ jobs:
 
       - name: List installed packages
         run: |
-          mamba activate cv
+          conda activate cv
           mamba list
 
       - name: Build CV
