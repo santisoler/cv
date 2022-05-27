@@ -1,0 +1,6 @@
+name: cv
+channels:
+  - conda-forge
+dependencies:
+  - python==3.10
+  - tectonic==0.9.0

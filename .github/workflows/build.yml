@@ -15,14 +15,39 @@ jobs:
         with:
           persist-credentials: false
 
-      - name: Install LaTeX
-        run: |
-          sudo apt-get update
-          xargs sudo apt-get install < requirements-ubuntu.txt
+      - name: Setup caching for tectonic
+        uses: actions/cache@v3
+        with:
+          path: ~/.cache/Tectonic
+          key: tectonic-${{ runner.os }}
+
+      - name: Setup caching for conda packages
+        uses: actions/cache@v3
+        with:
+          path: ~/conda_pkgs_dir
+          key: conda-${{ runner.os }}-${{ hashFiles('environment.yml') }}
+
+      - name: Setup Miniconda
+        uses: conda-incubator/setup-miniconda@v2.1.1
+        with:
+          environment-file: environment.yml
+          activate-environment: cv
+          miniforge-variant: Mambaforge
+          miniforge-version: "latest"
+          use-mamba: true
+          channel-priority: strict
+          # Needed for caching
+          use-only-tar-bz2: true
+
+      - name: List installed packages
+        shell: bash -l {0} # need to relogin in bash to enable mamba
+        run: mamba list
 
       - name: Build CV
+        shell: bash -l {0} # need to relogin in bash to enable mamba
         run: |
           make all
+          touch _output/.nojekyll
 
       - name: Upload CV as an artifact
         uses: actions/upload-artifact@v2

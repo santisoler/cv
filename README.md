@@ -8,23 +8,44 @@ Download a [PDF version of my CV](https://santisoler.github.io/cv/cv.pdf).
 
 ## How to build
 
-I recommend using the `Makefile` for building the CV.
+### Using tectonic
 
-Requirements (Ubuntu or Debian):
-- `make`
+You can use [Tectonic](https://tectonic-typesetting.github.io/en-US/) to build
+the PDF version of the CV from the sources. Tectonic is a modernizes
+self-contained LaTeX engine that's usually
+faster than using a regular LaTeX compiler.
+Check its website for instructions on how to install it. If you are familiar
+with Anaconda, it can be installed from
+[conda-forge](https://github.com/conda-forge/tectonic-feedstock).
+
+I recommend using the `Makefile` to build the PDF:
+
+- Use `make` to **build** the PDF.
+- Use `make show` to **open** the PDF with your favourite PDF reader.
+- Use `make clean` to **remove** the built PDF.
+
+### Using texlive
+
+If you cannot install Tectonic, you can still generate the PDF out of you
+regular texlive installation. But you might need some extra packages:
+
+For Ubuntu or Debian:
+
 - `latexmk`
 - `texlive`
 - `texlive-latex-extra`
 - `texlive-xetex`
 - `texlive-fonts-extra`
 
-For creating the PDF:
+To build the PDF just run:
 
 ```
-make pdf
+mkdir _output
+latexmk -xelatex -outdir=_output cv.tex
 ```
 
-Use `make show` to open the PDF with your favourite PDF reader.
+You can use `make show` to open the PDF with you favourite PDF reader and
+`make clean` to remove the built PDF and every other generated file.
 
 
 ## Older versions
