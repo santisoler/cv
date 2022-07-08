@@ -136,6 +136,11 @@
         {\LARGE #1}
     \end{flushleft}
 }
+\newcommand{\affiliation}[1]{%
+    \begin{flushleft}
+        {\large #1}
+    \end{flushleft}
+}
 
 % Entries
 \newcommand{\entriespad}{0.75em}
@@ -202,17 +207,15 @@
 % Header
 % ------
 \maintitle{\fullname}
-\subtitle{Postdoctoral Research Fellow}
 
-\begin{minipage}[t]{0.62\linewidth}
+\begin{minipage}[t]{0.64\linewidth}
     \begin{flushleft}
-        \eoas
-        \newline
-        \ubc
+        \subtitle{Postdoctoral Research Fellow}
+        \affiliation{ \eoas \newline \ubc}
     \end{flushleft}
 \end{minipage}
 \hfill
-\begin{minipage}[t]{0.38\linewidth}
+\begin{minipage}[t]{0.36\linewidth}
     \begin{flushright}
         \textbf{email} \MAIL{\email}
         \\
