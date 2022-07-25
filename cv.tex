@@ -62,6 +62,7 @@
 % -----------
 % Information
 % -----------
+\newcommand{\nametitle}{Dr.}
 \newcommand{\firstname}{Santiago}
 \newcommand{\middlename}{Rubén}
 \newcommand{\familyname}{Soler}
@@ -75,7 +76,7 @@
 % Institutions
 % ------------
 \newcommand{\compgeolab}{%
-    \href{https://www.compgeolab.com}{Computer-oriented geoscience lab}%
+    \href{https://www.compgeolab.com}{Computer-Oriented Geoscience Lab}%
 }
 \newcommand{\conicet}{%
     Consejo Nacional de Investigaciones Científicas y Técnicas%
@@ -90,6 +91,8 @@
     Facultad de Ciencias Exactas, Ingeniería y Agrimensura%
 }
 \newcommand{\unr}{Universidad Nacional de Rosario}
+\newcommand{\eoas}{Department of Earth, Ocean and Atmospheric Sciences}
+\newcommand{\ubc}{University of British Columbia}
 
 
 % -------
@@ -120,7 +123,7 @@
 % Variables and environments
 % --------------------------
 % New variables
-\newcommand{\fullname}{\firstname{} \middlename{} \familyname}
+\newcommand{\fullname}{\nametitle{} \firstname{} \middlename{} \familyname}
 
 % Titles and headings
 \newcommand{\maintitle}[1]{%
@@ -131,6 +134,11 @@
 \newcommand{\subtitle}[1]{%
     \begin{flushleft}
         {\LARGE #1}
+    \end{flushleft}
+}
+\newcommand{\affiliation}[1]{%
+    \begin{flushleft}
+        {\large #1}
     \end{flushleft}
 }
 
@@ -199,15 +207,15 @@
 % Header
 % ------
 \maintitle{\fullname}
-\subtitle{PhD in Geophysics}
 
-\begin{minipage}[t]{0.62\linewidth}
+\begin{minipage}[t]{0.64\linewidth}
     \begin{flushleft}
-        \compgeolab
+        \subtitle{Postdoctoral Research Fellow}
+        \affiliation{ \eoas \newline \ubc}
     \end{flushleft}
 \end{minipage}
 \hfill
-\begin{minipage}[t]{0.38\linewidth}
+\begin{minipage}[t]{0.36\linewidth}
     \begin{flushright}
         \textbf{email} \MAIL{\email}
         \\
@@ -225,6 +233,9 @@
 \section{Professional Appointments}
 
 \begin{cventries}
+    \multiline{2022 -- on}{Postdoctoral Research Fellow}{%
+        \eoas \newline \ubc
+    }
     \multiline{2022}{Coding Trainer}{%
         Code to Communicate Initiative \newline
         NSF-funded bilingual program for grad-students
@@ -266,7 +277,6 @@
 \end{cventries}
 
 
-\newpage
 \section{Certifications}
 
 \begin{cventries}
