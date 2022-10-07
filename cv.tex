@@ -44,7 +44,7 @@
 \usepackage{fancyhdr}
 \usepackage{lastpage} % get the total page numbers (\pageref{LastPage})
 \fancyhf{}  % clear current head and footer
-\fancyfoot[C]{\small \thepage\ of \pageref{LastPage}}
+\fancyfoot[C]{\small \thepage{} of~\pageref{LastPage}}
 \renewcommand{\headrulewidth}{0cm} % remove header rule
 \pagestyle{fancy}
 
@@ -289,6 +289,11 @@
 \subsection{Undergraduate Courses}
 
 \begin{cventries}
+    \multiline{2022}{%
+        EOSC 350: Environmental, Geotechnical, and Exploration Geophysics I
+    }{%
+        \eoas, \newline \ubc{}
+    }
     \multiline{2017 -- 2019}{Statistical Mechanics}{%
         Department of Geophysics and Astronomy, \newline \fcefn, \newline \unsj
     }
