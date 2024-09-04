@@ -8,40 +8,29 @@ on:
 
 jobs:
   build:
+
     runs-on: ubuntu-latest
+    env:
+      PYTHON: 3.12
+
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           persist-credentials: false
 
-      - name: Setup caching for tectonic
-        uses: actions/cache@v3
+      - name: Setup Python
+        uses: actions/setup-python@v5
         with:
-          path: ~/.cache/Tectonic
-          key: tectonic-${{ runner.os }}
+          python-version: ${{ env.PYTHON }}
 
-      - name: Setup caching for conda packages
-        uses: actions/cache@v3
-        with:
-          path: ~/conda_pkgs_dir
-          key: conda-${{ runner.os }}-${{ hashFiles('environment.yml') }}
-
-      - name: Setup Miniconda
-        uses: conda-incubator/setup-miniconda@v2.1.1
-        with:
-          environment-file: environment.yml
-          activate-environment: cv
-          miniforge-variant: Mambaforge
-          miniforge-version: "latest"
-          use-mamba: true
-          channel-priority: strict
-          # Needed for caching
-          use-only-tar-bz2: true
+      - name: Install requirements
+        run: |
+          pip install -r requirements.txt
 
       - name: List installed packages
-        shell: bash -l {0} # need to relogin in bash to enable mamba
-        run: mamba list
+        run: |
+          pip list
 
       - name: Build CV
         shell: bash -l {0} # need to relogin in bash to enable mamba
@@ -50,7 +39,7 @@ jobs:
           touch _output/.nojekyll
 
       - name: Upload CV as an artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: cv
           path: |
@@ -67,20 +56,19 @@ jobs:
       PDF_BRANCH: pdf
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v5
         with:
           persist-credentials: false
 
       - name: Download the built PDF
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: cv
           path: _output
 
       - name: Publish CV to preview branch
         if: ${{ github.event_name == 'pull_request' }}
-        # Don't use tags: https://julienrenaux.fr/2019/12/20/github-actions-security-risk/
-        uses: peaceiris/actions-gh-pages@8a36f3edfc5d1cbae6b09e6f5a7d7b19e5b7a73b
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ${{ env.OUTPUT_DIR }}
@@ -92,8 +80,7 @@ jobs:
 
       - name: Publish CV to pdf branch
         if: ${{ github.event_name == 'push' }}
-        # Don't use tags: https://julienrenaux.fr/2019/12/20/github-actions-security-risk/
-        uses: peaceiris/actions-gh-pages@8a36f3edfc5d1cbae6b09e6f5a7d7b19e5b7a73b
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ${{ env.OUTPUT_DIR }}
