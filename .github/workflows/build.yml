@@ -11,7 +11,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v5
         with:
           persist-credentials: false
 
@@ -50,7 +50,7 @@ jobs:
           touch _output/.nojekyll
 
       - name: Upload CV as an artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: cv
           path: |
@@ -67,20 +67,19 @@ jobs:
       PDF_BRANCH: pdf
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v5
         with:
           persist-credentials: false
 
       - name: Download the built PDF
-        uses: actions/download-artifact@v4.1.7
+        uses: actions/download-artifact@v4
         with:
           name: cv
           path: _output
 
       - name: Publish CV to preview branch
         if: ${{ github.event_name == 'pull_request' }}
-        # Don't use tags: https://julienrenaux.fr/2019/12/20/github-actions-security-risk/
-        uses: peaceiris/actions-gh-pages@8a36f3edfc5d1cbae6b09e6f5a7d7b19e5b7a73b
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ${{ env.OUTPUT_DIR }}
@@ -92,8 +91,7 @@ jobs:
 
       - name: Publish CV to pdf branch
         if: ${{ github.event_name == 'push' }}
-        # Don't use tags: https://julienrenaux.fr/2019/12/20/github-actions-security-risk/
-        uses: peaceiris/actions-gh-pages@8a36f3edfc5d1cbae6b09e6f5a7d7b19e5b7a73b
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ${{ env.OUTPUT_DIR }}
