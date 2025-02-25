@@ -17,7 +17,8 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          persist-credentials: false
+          # Need to persist credentials so we delete a branch
+          persist-credentials: true
 
       - name: Delete the CV preview branch
         # Allow this to fail if there is no branch to delete
