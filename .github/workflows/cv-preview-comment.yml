@@ -12,13 +12,12 @@ jobs:
   comment:
     runs-on: ubuntu-latest
     permissions:
-      pull-request: write
+      pull-requests: write
     env:
       PREVIEW_BRANCH: preview-pr${{ github.event.number }}
     steps:
       - name: Create comment with preview link
-        # Don't use tags: https://julienrenaux.fr/2019/12/20/github-actions-security-risk/
-        uses: peter-evans/create-or-update-comment@9f28a7d0f315487b1a02f09988ddb322a0212673
+        uses: peter-evans/create-or-update-comment@v4
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           issue-number: ${{ github.event.number }}
