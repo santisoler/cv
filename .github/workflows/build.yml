@@ -21,14 +21,8 @@ jobs:
           path: ~/.cache/Tectonic
           key: tectonic-${{ runner.os }}
 
-      - name: Setup caching for conda packages
-        uses: actions/cache@v3
-        with:
-          path: ~/conda_pkgs_dir
-          key: conda-${{ runner.os }}-${{ hashFiles('environment.yml') }}
-
-      - name: Setup Miniconda
-        uses: conda-incubator/setup-miniconda@v2.1.1
+      - name: Install tectonic
+        uses: wtfjoke/setup-tectonic@v3
         with:
           environment-file: environment.yml
           activate-environment: cv
@@ -44,7 +38,6 @@ jobs:
         run: mamba list
 
       - name: Build CV
-        shell: bash -l {0} # need to relogin in bash to enable mamba
         run: |
           make all
           touch _output/.nojekyll
