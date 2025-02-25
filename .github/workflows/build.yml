@@ -28,7 +28,7 @@ jobs:
         with:
           tectonic-version: 0.15.0
 
-      - name: Tectonic
+      - name: Tectonic version
         run: tectonic --version
 
       - name: Build CV
