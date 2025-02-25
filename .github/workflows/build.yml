@@ -6,12 +6,14 @@ on:
     branches:
       - main
 
+permissions: {}
+
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
           persist-credentials: false
 
@@ -21,36 +23,21 @@ jobs:
           path: ~/.cache/Tectonic
           key: tectonic-${{ runner.os }}
 
-      - name: Setup caching for conda packages
-        uses: actions/cache@v3
+      - name: Install tectonic
+        uses: wtfjoke/setup-tectonic@v3
         with:
-          path: ~/conda_pkgs_dir
-          key: conda-${{ runner.os }}-${{ hashFiles('environment.yml') }}
+          tectonic-version: 0.15.0
 
-      - name: Setup Miniconda
-        uses: conda-incubator/setup-miniconda@v2.1.1
-        with:
-          environment-file: environment.yml
-          activate-environment: cv
-          miniforge-variant: Mambaforge
-          miniforge-version: "latest"
-          use-mamba: true
-          channel-priority: strict
-          # Needed for caching
-          use-only-tar-bz2: true
-
-      - name: List installed packages
-        shell: bash -l {0} # need to relogin in bash to enable mamba
-        run: mamba list
+      - name: Tectonic version
+        run: tectonic --version
 
       - name: Build CV
-        shell: bash -l {0} # need to relogin in bash to enable mamba
         run: |
           make all
           touch _output/.nojekyll
 
       - name: Upload CV as an artifact
-        uses: actions/upload-artifact@v2
+        uses: actions/upload-artifact@v4
         with:
           name: cv
           path: |
@@ -59,6 +46,8 @@ jobs:
   publish:
     needs: [build]
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     env:
       OUTPUT_DIR: _output/
       # Name of the preview branch.
@@ -67,20 +56,21 @@ jobs:
       PDF_BRANCH: pdf
     steps:
       - name: Checkout
-        uses: actions/checkout@v2
+        uses: actions/checkout@v4
         with:
-          persist-credentials: false
+          # Need to persist credentials so we can push to gh-pages and preview
+          # branch
+          persist-credentials: true
 
       - name: Download the built PDF
-        uses: actions/download-artifact@v2
+        uses: actions/download-artifact@v4
         with:
           name: cv
           path: _output
 
       - name: Publish CV to preview branch
         if: ${{ github.event_name == 'pull_request' }}
-        # Don't use tags: https://julienrenaux.fr/2019/12/20/github-actions-security-risk/
-        uses: peaceiris/actions-gh-pages@8a36f3edfc5d1cbae6b09e6f5a7d7b19e5b7a73b
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ${{ env.OUTPUT_DIR }}
@@ -92,8 +82,7 @@ jobs:
 
       - name: Publish CV to pdf branch
         if: ${{ github.event_name == 'push' }}
-        # Don't use tags: https://julienrenaux.fr/2019/12/20/github-actions-security-risk/
-        uses: peaceiris/actions-gh-pages@8a36f3edfc5d1cbae6b09e6f5a7d7b19e5b7a73b
+        uses: peaceiris/actions-gh-pages@v4
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
           publish_dir: ${{ env.OUTPUT_DIR }}
