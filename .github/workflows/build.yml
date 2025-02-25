@@ -6,6 +6,8 @@ on:
     branches:
       - main
 
+permissions: {}
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -24,18 +26,7 @@ jobs:
       - name: Install tectonic
         uses: wtfjoke/setup-tectonic@v3
         with:
-          environment-file: environment.yml
-          activate-environment: cv
-          miniforge-variant: Mambaforge
-          miniforge-version: "latest"
-          use-mamba: true
-          channel-priority: strict
-          # Needed for caching
-          use-only-tar-bz2: true
-
-      - name: List installed packages
-        shell: bash -l {0} # need to relogin in bash to enable mamba
-        run: mamba list
+          tectonic-version: 0.14.1
 
       - name: Build CV
         run: |
@@ -62,7 +53,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          persist-credentials: false
+          # Need to persist credentials so we can push to gh-pages and preview
+          # branch
+          persist-credentials: true
 
       - name: Download the built PDF
         uses: actions/download-artifact@v4
