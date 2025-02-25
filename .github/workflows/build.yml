@@ -28,6 +28,9 @@ jobs:
         with:
           tectonic-version: 0.14.1
 
+      - name: Tectonic
+        run: tectonic --version
+
       - name: Build CV
         run: |
           make all
