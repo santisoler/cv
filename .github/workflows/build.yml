@@ -6,6 +6,8 @@ on:
     branches:
       - main
 
+permissions: {}
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -21,30 +23,15 @@ jobs:
           path: ~/.cache/Tectonic
           key: tectonic-${{ runner.os }}
 
-      - name: Setup caching for conda packages
-        uses: actions/cache@v3
+      - name: Install tectonic
+        uses: wtfjoke/setup-tectonic@v3
         with:
-          path: ~/conda_pkgs_dir
-          key: conda-${{ runner.os }}-${{ hashFiles('environment.yml') }}
+          tectonic-version: 0.15.0
 
-      - name: Setup Miniconda
-        uses: conda-incubator/setup-miniconda@v2.1.1
-        with:
-          environment-file: environment.yml
-          activate-environment: cv
-          miniforge-variant: Mambaforge
-          miniforge-version: "latest"
-          use-mamba: true
-          channel-priority: strict
-          # Needed for caching
-          use-only-tar-bz2: true
-
-      - name: List installed packages
-        shell: bash -l {0} # need to relogin in bash to enable mamba
-        run: mamba list
+      - name: Tectonic version
+        run: tectonic --version
 
       - name: Build CV
-        shell: bash -l {0} # need to relogin in bash to enable mamba
         run: |
           make all
           touch _output/.nojekyll
@@ -59,6 +46,8 @@ jobs:
   publish:
     needs: [build]
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     env:
       OUTPUT_DIR: _output/
       # Name of the preview branch.
@@ -69,7 +58,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v4
         with:
-          persist-credentials: false
+          # Need to persist credentials so we can push to gh-pages and preview
+          # branch
+          persist-credentials: true
 
       - name: Download the built PDF
         uses: actions/download-artifact@v4
