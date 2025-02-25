@@ -46,6 +46,8 @@ jobs:
   publish:
     needs: [build]
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
     env:
       OUTPUT_DIR: _output/
       # Name of the preview branch.
