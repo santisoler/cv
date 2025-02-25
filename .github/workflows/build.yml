@@ -26,7 +26,7 @@ jobs:
       - name: Install tectonic
         uses: wtfjoke/setup-tectonic@v3
         with:
-          tectonic-version: 0.14.1
+          tectonic-version: 0.15.0
 
       - name: Tectonic
         run: tectonic --version
