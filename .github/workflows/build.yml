@@ -91,3 +91,22 @@ jobs:
           user_email: "github-actions[bot]@users.noreply.github.com"
           # Only keep the latest commit to avoid bloating the repository
           force_orphan: true
+
+  comment:
+    needs: publish
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write
+    env:
+      PREVIEW_BRANCH: preview-pr${{ github.event.number }}
+    steps:
+      - name: Create comment with preview link
+        uses: peter-evans/create-or-update-comment@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          issue-number: ${{ github.event.number }}
+          body: |
+            :robot: :wave: Hi there, human. It looks like you're editing the CV. I'll build it for you whenever you make changes and place the resulting PDF at: https://github.com/${{ github.repository }}/blob/${{ env.PREVIEW_BRANCH }}/cv.pdf
+
+            > The preview branch `${{ env.PREVIEW_BRANCH }}` will be deleted when the PR is closed/merged.
+          comment-author: "github-actions[bot]"
