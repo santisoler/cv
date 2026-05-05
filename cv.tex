@@ -181,6 +181,17 @@
     }
     \vspace{\entriespad} \\
 }
+\newcommand{\supervision}[6]{%
+    {#1}
+    &
+    {%
+        \textbf{#2}, \emph{#3}%
+        \ifthenelse{\equal{#4}{}}{}{\newline {#4}}%
+        \ifthenelse{\equal{#5}{}}{}{\newline \emph{#5}}%
+        \ifthenelse{\equal{#6}{}}{}{\newline {#6}}%
+    }
+    \vspace{\entriespad} \\
+}
 
 % Macros
 \newcommand{\MAIL}[1]{%
@@ -404,6 +415,19 @@
 \end{cventries}
 
 \newpage
+\section{Supervision}
+
+\begin{cventries}
+    \supervision{2025}
+        {Kelly Baker}
+        {\ubc}
+        {Summer Research Project.}
+        {Open-source implementation of gravity and magnetic forward model of ellipsoids.}
+        {Co-advised with \lindsey.}
+
+\end{cventries}
+
+
 \section{Publications}
 
 \subsection{Peer-reviewed scientific articles}
@@ -458,7 +482,6 @@
         {10.1016/j.jsames.2017.11.021}
 \end{cventries}
 
-\newpage
 \subsection{Non-reviewed articles}
 
 \begin{cventries}
